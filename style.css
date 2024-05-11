@@ -8,32 +8,45 @@ body{
     background-color: bisque;
 }
 header{
-    background-color: cadetblue;
-    height: 80px;
+    background-image: linear-gradient(rgb(41, 24, 46),rgb(39, 4, 63));
+    height: 110px;
+    display: flex;
+    align-items: center;
 }
 .logo img{
     height: 70px;
     width: auto;
     border-radius: 50%;
+    transition: all 0.4;
+}
+.logo img:hover{
+    transform: scale(1.2);
 }
 li{
     list-style: none;
 }
 a{
     text-decoration: none;
-    color: black;
-    font-size: 1rem;
+    color: white;
+    font-size: 20px;
 }
-a:hover{
-    color: orange;
+.dropdown-item{
+    font-size: 15px;
 }
+.nav-item{
+    font-size: 20px;
+}
+.links li:hover{
+    transform: scale(1.2);
+}
+
 header{
     position: relative;
     padding: 0;
 }
 .navbar{
     width: 100%;
-    height: 70px;
+    height: 100px;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -46,26 +59,26 @@ header{
 }
 
 .navbar .toggle-btn{
-    color: white;
+    color: rgb(5, 5, 5);
     font-size: 1.5rem;
     cursor: pointer;
     display: none;
 }
 .action-btn{
-    background-color: orange;
-    color: #fff;
-    padding: 0.5rem 1rem;
+    background-color: rgb(252, 248, 248);
+    color: #0c0c0c;
+    padding: 0.5rem 2rem;
     border: none;
     outline: none;
-    border-radius: 20px;
-    font-size: 0.8rem;
+    border-radius: 25px;
+    font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
     transition: scale .2 ease ;
 }
 .action-btn:hover{
     transform: scale(1.3);
-    color: #fff;
+    color: #090909;
 }
 .action-btn:active{
     scale: 0.9;
@@ -115,4 +128,11 @@ header{
         display: block;
     }
     
+}
+
+
+@media (max-width: 1200px) {
+    .logo {
+        margin-left: 20px;
+    }
 }
