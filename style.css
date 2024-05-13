@@ -1,8 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wdth,wght@0,6..12,87.5,200..1000;1,6..12,87.5,200..1000&display=swap');
+
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 87.5,
+      "YTLC" 500;
 }
 body{
     background-color: rgb(26, 2, 53);
@@ -169,13 +178,15 @@ header{
         height: 100%;
         object-fit: cover;
         object-position: top;
-        padding: 10px;
-        border-radius: 10%;
 }
 .cuerp-card{
-    background-color: rgb(26, 2, 53);
-    box-shadow: 3px 3px 3px 6px black;
+    background-image: linear-gradient(rgb(41, 24, 46),rgb(39, 4, 63));
+    box-shadow: 3px 3px 3px 2px black;
 }
 .puntero{
     cursor: pointer;
+}
+.vermas{
+    width: 70%;
+    border: solid black;
 }

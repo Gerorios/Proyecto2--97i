@@ -100,40 +100,38 @@ class productos {
       let col = document.createElement("div");
       col.classList = "col mb-3"
 
-      let card = `  <div class="card h-100 border-0 cuerp-card">
+      let card = `<div class="card h-100 border-0 cuerp-card">
       <div class="contenedor-img">
       <img src="${item.image} " class="card-img-top" alt="...">
       </div>
-      <div class="card-body ">
-        <h5 class="card-title text-white">${item.title} </h5>
-        <p class="card-text text-white">${item.description} </p>
+      <div class="card-body">
+      <a href=""><h4 class="card-title text-white text-center">${item.title} </h4></a>
       </div>
-      <div class="m-2">
-      <a href="#" class="btn btn-dark"><i class="fa-solid fa-cart-shopping fa-sm mx-2" style="color: #ffffff;"></i>Añadir al carito</a>
+      <div class="d-flex w-100 justify-content-between align-items-center p-2">
+      <div class="m-2 puntero">
+      <i class="${item.favorito ? "fa-solid fa-check fa-xl" : "fa-solid fa-cart-shopping fa-xl" } " onclick="marcarCarrito(${item.id} )" style="color: #ffffff;"></i><a href="" class="btn btn-light mx-2">Ver mas</a>
       </div>
+      <div class="m-2" >
+      <h3 class="text-white">$${item.price}</h3>
+      </div>
+      </div>
+  </div>
 
       `
       col.innerHTML=card;
 
       contenedor.append(col);
-
    })
  }
+const contarPrecio = () =>{
+  let suma = 0
+  producto.forEach((item) =>{
+    if (item.favorito) {
+      suma = suma + item.price;
+    }else{
 
+    }
+  })
+}
 
- listarProductos();
-
-
-
-// // <div class="row row-cols-1 row-cols-md-3" id="contenedor">
-// // <div class="col mb-2">
-//   <div class="card h-100">
-//     <img src="..." class="card-img-top" alt="...">
-//     <div class="card-body">
-//       <h5 class="card-title">Card title</h5>
-//       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//       <a href="#" class="btn btn-primary">Go somewhere</a>
-//     </div>
-// //   </div>
-// // </div>
-// // </div>
+listarProductos();
