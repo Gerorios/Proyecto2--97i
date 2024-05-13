@@ -176,3 +176,6 @@ header{
     background-color: rgb(26, 2, 53);
     box-shadow: 3px 3px 3px 6px black;
 }
+.puntero{
+    cursor: pointer;
+}

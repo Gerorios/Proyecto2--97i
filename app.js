@@ -108,8 +108,8 @@ class productos {
         <h5 class="card-title text-white">${item.title} </h5>
         <p class="card-text text-white">${item.description} </p>
       </div>
-      <div class=" m-2">
-      <a href="#" class="btn btn-primary">Añadir al carito</a>
+      <div class="m-2">
+      <a href="#" class="btn btn-dark"><i class="fa-solid fa-cart-shopping fa-sm mx-2" style="color: #ffffff;"></i>Añadir al carito</a>
       </div>
 
       `
