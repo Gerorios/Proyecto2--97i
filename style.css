@@ -1,8 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wdth,wght@0,6..12,87.5,200..1000;1,6..12,87.5,200..1000&display=swap');
+
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 87.5,
+      "YTLC" 500;
 }
 body{
     background-color: rgb(26, 2, 53);
@@ -12,13 +21,20 @@ header{
     height: 110px;
     display: flex;
     align-items: center;
-    box-shadow: 0 2px 4px black
+    box-shadow: 0 2px 4px black;
+}
+.logo{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .logo img{
-    height: 70px;
+    height: 120px;
     width: auto;
     border-radius: 50%;
     transition: all 0.4;
+    margin-top: 25px;
 }
 .logo img:hover{
     transform: scale(1.2);
@@ -149,4 +165,31 @@ header{
     .logo {
         margin-left: 20px;
     }
+}
+
+#carousel{
+    margin-bottom: 25px;
+}
+.contenedor-img{
+    height: 300px;
+}
+.contenedor-img img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+}
+.cuerp-card{
+    background-image: linear-gradient(rgb(41, 24, 46),rgb(39, 4, 63));
+    box-shadow: 3px 3px 3px 2px black;
+}
+.puntero{
+    cursor: pointer;
+}
+.vermas{
+    width: 70%;
+    border: solid black;
+}
+#contenedor-tabla{
+    background-color: white;
 }

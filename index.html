@@ -19,11 +19,11 @@
   <body>
     <header>
       <div class="navbar">
-        <div class="logo"><img src="/img/logo/logo2.0.jpg" alt="" /></div>
+        <div class="logo"> <a href="/index.html"><img src="/img/logo/logo-proyecto-2.png" alt="" /></a></div>
         <ul class="links">
           <li><a href="" class="info">About us</a></li>
-          <li><a href="" class="info">Contacto</a></li>
-          <li><a href="" class="info">Ver mi carrito</a></li>
+          <li><a href="" class="info">Administracion</a></li>
+          <li><a href="/pages/Carrito.html" class="info">Ver mi carrito</a></li>
         </ul>
         <a href="" class="action-btn">Login</a>
         <div class="toggle-btn" onclick="openMenu()">
@@ -32,13 +32,13 @@
       </div>
       <div class="dropdown_menu">
         <li><a href="">About us</a></li>
-        <li><a href="">Contactanos</a></li>
+        <li><a href="">Administracion</a></li>
         <li><a href="">Ver mi carrito</a></li>
         <li><a href="" class="action-btn">Login</a></li>
       </div>
     </header>
     <main>
-      <div class="container-fluid">
+      <div class="container-fluid" id="carousel-fluid">
         <div class="col-12">
           <div class="row-col-1 row-cols-sm-1 m-4">
             <div id="carouselExampleDark" class="carousel carousel-dark slide">
@@ -78,21 +78,32 @@
             </div>
           </div>
         </div>
-        <div class="container">
-          <div class="row row-cols-1 row-cols-md-3 g-4" id="contenedor">
-            <!-- <div class="col mb-3">
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
+      </div>
+      <div class="container">
+        <div class="row my-2 text-center">
+          <h2 class="text-white fw-bold">Nuestras ofertas <i class="fa-brands fa-shopify"></i></h2>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3" id="contenedor">
+          <div class="col mb-3">
+            <!-- <div class="card h-100 border-0 cuerp-card">
+              <div class="contenedor-img">
+              <img src="/" class="card-img-top" alt="...">
               </div>
-            </div> -->
-          </div>
+              <div class="card-body ">
+                <h4 class="card-title text-white text-center">Titutlo</h4>
+              </div>
+              <div class="d-flex w-100 justify-content-between align-items-center p-2">
+              <div class="m-2 puntero">
+              <i class="fa-solid fa-cart-shopping fa-xl" style="color: #ffffff;"></i>
+              </div>
+              <div class="m-2" >
+              <h3 class="text-white">$99.999</h3>
+              </div>
+              </div>
+          </div> -->
         </div>
       </div>
+ 
     </main>
     <footer></footer>
     <script
@@ -100,6 +111,8 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="https://kit.fontawesome.com/82f0997eec.js" crossorigin="anonymous"></script>
     <script src="/app.js"></script>
+    <script src="/js/global.js"></script>
   </body>
 </html>

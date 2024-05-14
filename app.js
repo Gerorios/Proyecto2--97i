@@ -4,19 +4,20 @@ const openMenu = () =>{
    dropdownMenu.classList.toggle("open")
 }
 
-class productos {
-   constructor(id,titulo,precio,descrpcion,carrito = false,categoria , imagen){
-     this.id = id;
-     this.titulo = titulo
-     this.precio = precio;
-     this.descrpcion = descrpcion;
-     this.carrito = carrito;
-     this.categoria = categoria;
-     this.imagen = imagen;
-   }
-}
 
-const data = [
+class productos {
+   constructor(id,title,price,description,category,image,favorito=false){
+      this.id = id;
+      this.title = title;
+      this.price = price;
+      this.description = description;
+      this.category = category;
+      this.image = image;
+      this.favorito = favorito;
+
+   }
+ }
+ const data = [
    {
      id: 9,
      title: "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
@@ -26,7 +27,7 @@ const data = [
      category: "electronics",
      image: "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
 
-     carrito: false,
+     favorito: false,
    },
    {
      id: 10,
@@ -37,7 +38,7 @@ const data = [
      category: "electronics",
      image: "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
 
-     carrito: false,
+     favorito: false,
    },
    {
      id: 11,
@@ -49,7 +50,7 @@ const data = [
      category: "electronics",
      image: "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
 
-     carrito: false,
+     favorito: false,
    },
    {
      id: 12,
@@ -61,7 +62,7 @@ const data = [
      category: "electronics",
      image: "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
 
-     carrito: false,
+     favorito: false,
    },
    {
      id: 13,
@@ -72,7 +73,7 @@ const data = [
      category: "electronics",
      image: "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
 
-     carrito: false,
+     favorito: false,
    },
    {
      id: 14,
@@ -84,38 +85,53 @@ const data = [
      category: "electronics",
      image: "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
 
-     carrito: false,
-   }, 
- ]
-let producto = JSON.parse(localStorage.getItem("productos")) || [];
+     favorito: false,
+   },
+ ];
 
-let contenedor = document.querySelector("#contenedor")
+ const producto = JSON.parse(localStorage.getItem("productos")) || [];
+
+ let contenedor = document.querySelector("#contenedor");
 
  const listarProductos = () =>{
-   //Limpio el contenedor
-   contenedor.innerHTML="";
+   contenedor.innerHTML = "";
 
-   //Recorro data y creo una tarjeta por cada producto
-   data.forEach((item)=>{
-      
+   producto.forEach((item) =>{
+      let col = document.createElement("div");
+      col.classList = "col mb-3"
 
+      let card = `<div class="card h-100 border-0 cuerp-card">
+      <div class="contenedor-img">
+      <img src="${item.image} " class="card-img-top" alt="...">
+      </div>
+      <div class="card-body">
+      <a href=""><h4 class="card-title text-white text-center">${item.title} </h4></a>
+      </div>
+      <div class="d-flex w-100 justify-content-between align-items-center p-2">
+      <div class="m-2 puntero">
+      <i class="${item.favorito ? "fa-solid fa-check fa-xl" : "fa-solid fa-cart-shopping fa-xl" } " onclick="marcarCarrito(${item.id} )" style="color: #ffffff;"></i><a href="" class="btn btn-light mx-2">Ver mas</a>
+      </div>
+      <div class="m-2" >
+      <h3 class="text-white">$${item.price}</h3>
+      </div>
+      </div>
+  </div>
+
+      `
+      col.innerHTML=card;
+
+      contenedor.append(col);
    })
  }
+const contarPrecio = () =>{
+  let suma = 0
+  producto.forEach((item) =>{
+    if (item.favorito) {
+      suma = suma + item.price;
+    }else{
 
+    }
+  })
+}
 
-
-
-
-
-
-
-//  <div class="col mb-3">
-// <div class="card" style="width: 18rem;">
-//   <img src="..." class="card-img-top" alt="...">
-//   <div class="card-body">
-//     <h5 class="card-title">Card title</h5>
-//     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//     <a href="#" class="btn btn-primary">Go somewhere</a>
-//   </div>
-// </div>
-// </div>
+listarProductos();
