@@ -1,4 +1,4 @@
-let contenedor = document.querySelector("#contenedor");
+
 let contenedorTabla = document.querySelector("#contenedor-tabla");
 let cuerpoTabla = document.querySelector("#cuerpo-tabla");
 
@@ -27,10 +27,7 @@ const listarCarrito = () =>{
             cuerpoTabla.append(tablerow);   
          }
          else{
-            let card = document.createElement("div");
-            let mensaje = "<h1>No hay añadidos al carro</h1>"
-            card.innerHTML = mensaje;
-            contenedor.append(card);
+            contenedorTabla.innerHTML="";
          }
      })
 }

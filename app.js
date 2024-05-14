@@ -109,7 +109,7 @@ class productos {
       </div>
       <div class="d-flex w-100 justify-content-between align-items-center p-2">
       <div class="m-2 puntero">
-      <i class="${item.favorito ? "fa-solid fa-check fa-xl" : "fa-solid fa-cart-shopping fa-xl" } " onclick="marcarCarrito(${item.id} )" style="color: #ffffff;"></i><a href="" class="btn btn-light mx-2">Ver mas</a>
+      <i class="${item.favorito ? "fa-solid fa-xmark fa-xl bg-dark" : "fa-solid fa-cart-shopping fa-xl" } " onclick="marcarCarrito(${item.id} )" style="color: white;"></i><a href="" class="btn btn-light mx-2">Ver mas</a>
       </div>
       <div class="m-2" >
       <h3 class="text-white">$${item.price}</h3>
