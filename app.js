@@ -88,6 +88,7 @@ class productos {
    },
  ];
 
+
  const producto = JSON.parse(localStorage.getItem("productos")) || [];
 
  let contenedor = document.querySelector("#contenedor");
@@ -122,4 +123,6 @@ class productos {
       contenedor.append(col);
    })
  }
+
+ 
 listarProductos();
