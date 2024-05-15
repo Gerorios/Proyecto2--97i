@@ -193,3 +193,11 @@ header{
 #contenedor-tabla{
     background-color: white;
 }
+.cartel{
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+}
