@@ -35,6 +35,19 @@ const listarCarrito = () => {
    });
    imprimirTotal();
 }
+const actualizarTotal = () => {
+    let total = 0;  
+    for (let i = 0; i < producto.length; i++) {
+
+        if (producto[i].carrito) {
+
+            total += producto[i].price;
+        }
+    }
+    document.querySelector("#total p").textContent = `$${total.toFixed(2)}`;
+}
+
+//Funcion para impirmir el cartel del total.
 const imprimirTotal = () =>{
     let productosCarrito = producto.filter((item) =>{
         return item.carrito == true;
@@ -50,14 +63,17 @@ const imprimirTotal = () =>{
             <h5 id="text-desc" style="color: orangered;" class="fw-bold">Total</h5>
           </div>
           <div id="total">
-            <p class="text-center mt-2">sdasd</p>
+            <p class="text-center mt-2"></p>
           </div>
         </div>
         </div>`
         rowTotal.innerHTML=total;
         totalcontenedor.appendChild(rowTotal);
     }
+    actualizarTotal();
 }
+
+
 //Funcion para eliminar los elementos del carrito
 const eliminarCarrito = (id) =>{
     //Tomo el indice del producto que quiere eliminar
