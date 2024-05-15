@@ -1,20 +1,21 @@
 
 let contenedorTabla = document.querySelector("#contenedor-tabla");
 let cuerpoTabla = document.querySelector("#cuerpo-tabla");
-let nofavs = document.getElementById("contenedor");
-
+let nofavs = document.getElementById("contenedor")
 let producto = JSON.parse(localStorage.getItem("productos")) || [];
+let totalcontenedor = document.getElementById("total-content")
 
 const listarCarrito = () => {
    cuerpoTabla.innerHTML = "";
+   totalcontenedor.innerHTML="";
    let productoCarrito = producto.filter((item) => {
-       return item.favorito === true;
+       return item.carrito === true;
    });
 
    if (productoCarrito.length === 0) {
        let cartel = document.createElement("div");
        cartel.classList = "alert alert-danger"
-       cartel.innerHTML="<h2> No hay favoritos agregados</h2>"
+       cartel.innerHTML="<h2> No hay elementos agregados al carrito</h2>"
        nofavs.append(cartel);
    }
    productoCarrito.forEach((item) => {
@@ -32,17 +33,43 @@ const listarCarrito = () => {
        tablerow.innerHTML = contenidoTabla;
        cuerpoTabla.append(tablerow);
    });
+   imprimirTotal();
 }
+const imprimirTotal = () =>{
+    let productosCarrito = producto.filter((item) =>{
+        return item.carrito == true;
+    })
+    if(productosCarrito.length > 0){
+        let rowTotal = document.createElement("div");
+        rowTotal.classList="row";
 
-
+        let total = `
+        <div class="w-100 d-flex justify-content-end">
+        <div class="d-block">
+          <div>
+            <h5 id="text-desc" style="color: orangered;" class="fw-bold">Total</h5>
+          </div>
+          <div id="total">
+            <p class="text-center mt-2">sdasd</p>
+          </div>
+        </div>
+        </div>`
+        rowTotal.innerHTML=total;
+        totalcontenedor.appendChild(rowTotal);
+    }
+}
+//Funcion para eliminar los elementos del carrito
 const eliminarCarrito = (id) =>{
+    //Tomo el indice del producto que quiere eliminar
    let index = producto.findIndex((item)=>{
       return item.id == id;
     })
+    //Valido si quiere eliminarlo  o no
     let validacion = confirm("Seguro que desea eliminar el producto del carrito?");
     if(validacion){
-      producto[index].favorito = !producto[index].favorito
-  
+        //Revierto el valor del producto de la propiedad carrito,asi este desaparece de la lista
+      producto[index].carrito = !producto[index].carrito
+      //Actualizo BD
       localStorage.setItem("productos",JSON.stringify(producto));
       listarCarrito();
     }else{

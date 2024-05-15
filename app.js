@@ -6,14 +6,14 @@ const openMenu = () =>{
 
 
 class productos {
-   constructor(id,title,price,description,category,image,favorito=false){
+   constructor(id,title,price,description,category,image,carrito=false){
       this.id = id;
       this.title = title;
       this.price = price;
       this.description = description;
       this.category = category;
       this.image = image;
-      this.favorito = favorito;
+      this.carrito = carrito;
 
    }
  }
@@ -26,7 +26,7 @@ class productos {
        "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
      category: "electronics",
      image: "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
-     favorito: false,
+     carrito: false,
    },
    {
      id: 10,
@@ -37,7 +37,7 @@ class productos {
      category: "electronics",
      image: "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
 
-     favorito: false,
+     carrito: false,
    },
    {
      id: 11,
@@ -49,7 +49,7 @@ class productos {
      category: "electronics",
      image: "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
 
-     favorito: false,
+     carrito: false,
    },
    {
      id: 12,
@@ -61,7 +61,7 @@ class productos {
      category: "electronics",
      image: "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
 
-     favorito: false,
+     carrito: false,
    },
    {
      id: 13,
@@ -72,7 +72,7 @@ class productos {
      category: "electronics",
      image: "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
 
-     favorito: false,
+     carrito: false,
    },
    {
      id: 14,
@@ -84,10 +84,9 @@ class productos {
      category: "electronics",
      image: "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
 
-     favorito: false,
+     carrito: false,
    },
  ];
-
 
  const producto = JSON.parse(localStorage.getItem("productos")) || [];
 
@@ -109,7 +108,7 @@ class productos {
       </div>
       <div class="d-flex w-100 justify-content-between align-items-center p-2">
       <div class="m-2 puntero">
-      <i class="${item.favorito ? "fa-solid fa-xmark fa-xl bg-dark" : "fa-solid fa-cart-shopping fa-xl" } " onclick="marcarCarrito(${item.id} )" style="color: white;"></i><a href="" class="btn btn-light mx-2">Ver mas</a>
+      <i class="${item.carrito ? "fa-solid fa-xmark fa-xl bg-dark" : "fa-solid fa-cart-shopping fa-xl" } " onclick="marcarCarrito(${item.id} )" style="color: white;"></i><a href="" class="btn btn-light mx-2">Ver mas</a>
       </div>
       <div class="m-2" >
       <h3 style="color: green;">$${item.price}</h3>
