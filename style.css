@@ -157,8 +157,6 @@ header{
         width: unset;
     }
 }
-
-
 @media (max-width: 1200px) {
     .logo {
         margin-left: 20px;
@@ -179,13 +177,14 @@ header{
 .cuerp-card{
     background-image: linear-gradient(rgb(41, 24, 46),rgb(39, 4, 63));
     box-shadow: 3px 3px 3px 2px black;
+    height: 100%;
+    transition: transform 0.3s ease;
 }
+.cuerp-card:hover {
+    transform: scale(1.05);
+  }
 .puntero{
     cursor: pointer;
-}
-.vermas{
-    width: 70%;
-    border: solid black;
 }
 #contenedor-tabla{
     background-color: white;
