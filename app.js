@@ -106,7 +106,7 @@ class productos {
       <i class="${item.carrito ? "fa-solid fa-xmark fa-xl bg-dark" : "fa-solid fa-cart-shopping fa-xl" } " onclick="marcarCarrito(${item.id} )" style="color: white;"></i><a href="" class="btn btn-light mx-2">Ver mas</a>
       </div>
       <div class="m-2" >
-      <h3 style="color: green;">$${item.price}</h3>
+      <h3 style="color: yellow;">$${item.price}</h3>
       </div>
       </div>
   </div>

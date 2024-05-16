@@ -58,17 +58,14 @@ const imprimirTotal = () =>{
         rowTotal.classList="row";
 
         let total = `
-        <div class="w-100 d-flex justify-content-end">
+        <div class="w-100 d-flex justify-content-end caja-carrito">
         <div class="d-flex">
-
           <div class="mx-2 caja-boton-continuar">
-            <a href="" class="continue-botton" style="color: white;">Ir a pagar</a>
+            <a href="" class="continue-botton" style="color: black;">Ir a pagar</a>
           </div> 
-
           <div id="total" class="d-flex ">
             <p class="text-center mt-2 mx-3 fs-6 p-1"></p>
           </div>
-
         </div>
         </div>
     

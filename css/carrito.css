@@ -1,12 +1,12 @@
 #total{
     height: 50px;
     width: 150px;
-    border: solid orangered;
+    border: solid yellow;
     background-color: white;
     border-radius: 15%;
 }
 .continue-botton{
-    background-color: orangered;
+    background-color: yellow;
     padding: 0.5rem 1.5rem;
     border: none;
     outline: none;
@@ -14,10 +14,15 @@
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
-    transition: scale .2 ease ;
+}
+.continue-botton:hover{
+    transform: scale(1.3);
 }
 .caja-boton-continuar{
     margin-top: 12px;
+}
+.caja-carrito{
+    padding-bottom: 15px;
 }
 #main{
     min-height: 75vh;
