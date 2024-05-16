@@ -19,3 +19,6 @@
 .caja-boton-continuar{
     margin-top: 12px;
 }
+#main{
+    min-height: 75vh;
+}

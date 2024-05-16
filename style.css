@@ -164,7 +164,6 @@ header{
         margin-left: 20px;
     }
 }
-
 #carousel{
     margin-bottom: 25px;
 }
@@ -198,4 +197,23 @@ header{
     justify-content: center;
     align-items: center;
     background-color: red;
+}
+footer{
+    background-image: linear-gradient(rgb(41, 24, 46),rgb(39, 4, 63));
+    transition: 0.3ms;
+}
+#footerlogo:hover{
+    transform: scale(1.2);
+}
+@media screen and (min-width:0px) and (max-width: 750px) {
+    #footerlogo{
+        display: none;
+    }  
+    .cols.responsive{
+        margin-top: 20px;
+    }
+
+}
+footer a:hover{
+    transform: scale(1.3);
 }
