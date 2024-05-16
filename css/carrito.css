@@ -26,6 +26,9 @@
 .caja-carrito{
     padding-bottom: 15px;
 }
+#boton{
+    margin-bottom: 50px;
+}
 #main{
     min-height: 75vh;
 }
