@@ -91,7 +91,7 @@ class productos {
 
    producto.forEach((item) =>{
       let col = document.createElement("div");
-      col.classList = "col-12 col-sm-12 col-md-4 col-lg-4 mb-4"
+      col.classList = "col mb-4"
   
 
       let card = `<div class="card  border-0 cuerp-card">

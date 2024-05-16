@@ -68,7 +68,6 @@ const imprimirTotal = () =>{
           </div>
         </div>
         </div>
-    
         `
         rowTotal.innerHTML=total;
         totalcontenedor.appendChild(rowTotal);

@@ -5,6 +5,7 @@
     background-color: white;
     border-radius: 15%;
 }
+
 .continue-botton{
     background-color: yellow;
     padding: 0.5rem 1.5rem;
@@ -15,11 +16,12 @@
     font-weight: bold;
     cursor: pointer;
 }
-.continue-botton:hover{
-    transform: scale(1.3);
-}
+
 .caja-boton-continuar{
     margin-top: 12px;
+}
+.caja-boton-continuar:hover{
+    transform: scale(1.1);
 }
 .caja-carrito{
     padding-bottom: 15px;
