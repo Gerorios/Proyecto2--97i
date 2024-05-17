@@ -19,7 +19,7 @@ header{
     height: 110px;
     display: flex;
     align-items: center;
-    box-shadow: 0 2px 4px black;
+    box-shadow: 0.1rem 0.2rem black;
 }
 .logo{
     height: 100%;
@@ -266,6 +266,7 @@ header{
 footer{
     background-image: linear-gradient(rgb(41, 24, 46),rgb(39, 4, 63));
     transition: 0.3ms;
+    box-shadow: 0 -0.2rem  black;
 }
 #footerlogo:hover{
     transform: scale(1.2);

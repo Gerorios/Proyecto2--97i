@@ -61,7 +61,7 @@ const imprimirTotal = () =>{
         <div class="w-100 d-flex justify-content-end caja-carrito">
         <div class="d-flex">
           <div class="mx-2 caja-boton-continuar">
-          <button type="button" class="btn" style="background-color: yellow;" data-bs-toggle="modal" id="boton" data-bs-target="#productoModal" data-bs-whatever="@mdo">Ir a pagar</button>
+          <button type="button" class="btn" style="background-color: orangered;" data-bs-toggle="modal" id="boton" data-bs-target="#productoModal" data-bs-whatever="@mdo">Ir a pagar</button>
           </div> 
           <div id="total" class="d-flex ">
             <p class="text-center mt-2 mx-3 fs-6 p-1"></p>
@@ -94,7 +94,6 @@ const eliminarCarrito = (id) =>{
 }
 listarCarrito();
 
-const eliminarTodo = (event)=>{
-    cuerpoTabla.innerHTML="";
-    marcarCarrito();
-}
+
+const myModal = new bootstrap.Modal(document.getElementById("productoModal"));
+

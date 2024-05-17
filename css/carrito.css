@@ -1,9 +1,10 @@
 #total{
     height: 50px;
     width: 150px;
-    border: solid yellow;
+    border: solid orangered;
     background-color: white;
     border-radius: 15%;
+    box-shadow: 0.2rem 0.1rem rgb(56, 55, 55);
 }
 
 .continue-botton{
@@ -27,8 +28,14 @@
     padding-bottom: 15px;
 }
 #boton{
-    margin-bottom: 50px;
+    margin-bottom: 100px;
+    height: 25%;
+    
 }
 #main{
     min-height: 75vh;
 }
+.error {
+    color: red;
+    font-size: 0.875em;
+  }
