@@ -5,6 +5,8 @@ let nofavs = document.getElementById("contenedor")
 let producto = JSON.parse(localStorage.getItem("productos")) || [];
 let totalcontenedor = document.getElementById("total-content")
 
+ //READ
+
 const listarCarrito = () => {
    cuerpoTabla.innerHTML = "";
    totalcontenedor.innerHTML="";
@@ -13,10 +15,7 @@ const listarCarrito = () => {
    });
 
    if (productoCarrito.length === 0) {
-       let cartel = document.createElement("div");
-       cartel.classList = "alert alert-danger"
-       cartel.innerHTML="<h2> No hay elementos agregados al carrito</h2>"
-       nofavs.append(cartel);
+    mostrarCarritoVacio();
    }
    productoCarrito.forEach((item) => {
        let tablerow = document.createElement("tr");
@@ -35,6 +34,17 @@ const listarCarrito = () => {
    });
    imprimirTotal();
 }
+const mostrarCarritoVacio = () => {
+    cuerpoTabla.innerHTML = "";
+    totalcontenedor.innerHTML = "";
+    let cartel = document.createElement("div");
+    cartel.classList = "alert alert-danger";
+    cartel.innerHTML = "<h2> No hay elementos agregados al carrito</h2>";
+    nofavs.innerHTML = ""; 
+    nofavs.append(cartel);
+// }
+
+//UPDATE
 //Funcion para actualizar el total de la compra
 const actualizarTotal = () => {
     let total = 0;  
@@ -48,6 +58,8 @@ const actualizarTotal = () => {
     document.querySelector("#total p").textContent = `Total: $${total.toFixed(2)}`;
 }
 
+
+//READ
 //Funcion para impirmir el cartel del total.
 const imprimirTotal = () =>{
     let productosCarrito = producto.filter((item) =>{
@@ -63,7 +75,7 @@ const imprimirTotal = () =>{
           <div class="mx-2 caja-boton-continuar">
           <button type="button" class="btn" style="background-color: orangered;" data-bs-toggle="modal" id="boton" data-bs-target="#productoModal" data-bs-whatever="@mdo">Ir a pagar</button>
           </div> 
-          <div id="total" class="d-flex ">
+          <div id="total" class="d-flex">
             <p class="text-center mt-2 mx-3 fs-6 p-1"></p>
           </div>
         </div>
@@ -74,6 +86,8 @@ const imprimirTotal = () =>{
     }
     actualizarTotal();
 }
+
+//DELETE
 //Funcion para eliminar los elementos del carrito
 const eliminarCarrito = (id) =>{
     //Tomo el indice del producto que quiere eliminar
@@ -92,8 +106,31 @@ const eliminarCarrito = (id) =>{
       alert("Proceso Cancelado!")
     }
 }
+
+
+//Funciones para reinciar al pagar con el modal
+
+const eliminarTodosDelCarrito = () => {
+    producto = producto.map(item => {
+        return { ...item, carrito: false };
+    });
+
+    // Actualizar localStorage
+    localStorage.setItem("productos", JSON.stringify(producto));
+
+    // Mostrar mensaje de carrito vacío
+    mostrarCarritoVacio();
+    listarCarrito();
+}
+document.addEventListener("DOMContentLoaded", () => {
+    listarCarrito();
+
+    const pagarBtn = document.getElementById("pagarBtn");
+    pagarBtn.addEventListener("click", () => {
+        eliminarTodosDelCarrito();
+    });
+});
+
+
 listarCarrito();
-
-
-const myModal = new bootstrap.Modal(document.getElementById("productoModal"));
 
