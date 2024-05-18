@@ -21,7 +21,7 @@ const listarCarrito = () => {
    productoCarrito.forEach((item) => {
        let tablerow = document.createElement("tr");
        let contenidoTabla = `
-           <td ><img src="${item.image}" alt="" class ="w-25"></td>
+           <td ><img src="${item.image}" alt="" class ="w-50 mx-5"></td>
            <td class = "fs-6">${item.title}"</td>
            <td class = "fs-5" style="color: green">$${item.price}</td>
            <td>
@@ -35,6 +35,7 @@ const listarCarrito = () => {
    });
    imprimirTotal();
 }
+//Funcion para actualizar el total de la compra
 const actualizarTotal = () => {
     let total = 0;  
     for (let i = 0; i < producto.length; i++) {
@@ -44,7 +45,7 @@ const actualizarTotal = () => {
             total += producto[i].price;
         }
     }
-    document.querySelector("#total p").textContent = `$${total.toFixed(2)}`;
+    document.querySelector("#total p").textContent = `Total: $${total.toFixed(2)}`;
 }
 
 //Funcion para impirmir el cartel del total.
@@ -57,23 +58,22 @@ const imprimirTotal = () =>{
         rowTotal.classList="row";
 
         let total = `
-        <div class="w-100 d-flex justify-content-end">
-        <div class="d-block">
-          <div>
-            <h5 id="text-desc" style="color: orangered;" class="fw-bold">Total</h5>
-          </div>
-          <div id="total">
-            <p class="text-center mt-2"></p>
+        <div class="w-100 d-flex justify-content-end caja-carrito">
+        <div class="d-flex">
+          <div class="mx-2 caja-boton-continuar">
+          <button type="button" class="btn" style="background-color: yellow;" data-bs-toggle="modal" id="boton" data-bs-target="#productoModal" data-bs-whatever="@mdo">Ir a pagar</button>
+          </div> 
+          <div id="total" class="d-flex ">
+            <p class="text-center mt-2 mx-3 fs-6 p-1"></p>
           </div>
         </div>
-        </div>`
+        </div>
+        `
         rowTotal.innerHTML=total;
         totalcontenedor.appendChild(rowTotal);
     }
     actualizarTotal();
 }
-
-
 //Funcion para eliminar los elementos del carrito
 const eliminarCarrito = (id) =>{
     //Tomo el indice del producto que quiere eliminar
@@ -93,3 +93,8 @@ const eliminarCarrito = (id) =>{
     }
 }
 listarCarrito();
+
+const eliminarTodo = (event)=>{
+    cuerpoTabla.innerHTML="";
+    marcarCarrito();
+}

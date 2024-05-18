@@ -1,7 +1,34 @@
 #total{
     height: 50px;
-    width: 100px;
-    border: solid orangered;
+    width: 150px;
+    border: solid yellow;
     background-color: white;
     border-radius: 15%;
+}
+
+.continue-botton{
+    background-color: yellow;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.caja-boton-continuar{
+    margin-top: 12px;
+}
+.caja-boton-continuar:hover{
+    transform: scale(1.1);
+}
+.caja-carrito{
+    padding-bottom: 15px;
+}
+#boton{
+    margin-bottom: 50px;
+}
+#main{
+    min-height: 75vh;
 }

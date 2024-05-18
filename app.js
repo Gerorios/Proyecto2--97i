@@ -1,9 +1,3 @@
-const toggleBtn = document.querySelector(".toggle-btn")
-const dropdownMenu = document.querySelector(".dropdown_menu")
-const openMenu = () =>{
-   dropdownMenu.classList.toggle("open")
-}
-
 
 class productos {
    constructor(id,title,price,description,category,image,carrito=false){
@@ -97,9 +91,10 @@ class productos {
 
    producto.forEach((item) =>{
       let col = document.createElement("div");
-      col.classList = "col mb-3"
+      col.classList = "col mb-4"
+  
 
-      let card = `<div class="card h-100 border-0 cuerp-card">
+      let card = `<div class="card  border-0 cuerp-card">
       <div class="contenedor-img">
       <img src="${item.image} " class="card-img-top" alt="...">
       </div>
