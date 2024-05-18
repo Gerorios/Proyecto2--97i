@@ -132,109 +132,63 @@
 </html>
 
 
-
 <!--- Modal-->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Open modal for @mdo</button>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat">Open modal for @fat</button>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Open modal for @getbootstrap</button>
-<div
-class="modal fade"
-id="productoModal"
-tabindex="-1"
-aria-labelledby="productoModalLabel"
-aria-hidden="true"
->
-<div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h1 class="modal-title fs-5" id="productoModalLabel">
-        Proceso de pago 
-      </h1>
-      <button
-        type="button"
-        class="btn-close"
-        data-bs-dismiss="modal"
-        aria-label="Close"
-      ></button>
-    </div>
-    <div class="modal-body">
-      <form onsubmit="">
-        <div class="row mb-2">
-          <div class="col">
-            <label>Nombre Titular de la tarjeta</label>
-            <input
-              type="text"
-              class="form-control"
-              required
-              id="tarjetamodal"
-            />
-            <p class="text-muted">Debe estar escrito igual que en la tarjeta</p>
-          </div>
-        </div>
-        <div class="row mb-2">
-          <div class="col">
-            <label for="numerosModal">Numero de la tarjeta</label>
-            <input
-            type="password"
-            class="form-control"
-            required
-            id="numerosModal"
-            placeholder="1234 1234 1234"
-          />
-          </div>
-        </div>
-        <div class="row mb-2">
-          <div class="col">
-            <label>Fecha de caducidad</label>
-            <input
-              type="text"
-              class="form-control"
-              maxlength="5"
-              required
-              id="precioModal"
-              placeholder="dd/mm"
-            />
-          </div>
-          <div class="col">
-            <label>Codigo de seguridad</label>
-            <input
-              type="text"
-              class="form-control"
-              required
-              id="imagenModal"
-              maxlength="3"
-              placeholder="CVC"
-            />
-          </div>
-        </div>
-        <div class="row mb-2">
-          <div class="col">
-            <label>Envio a...</label>
-            <select
-              class="form-select"
-              aria-label="Default select example"
-              required
-              id="categoriaModal"
-            >
-              <option selected>Seleccione una provincia</option>
-              <option value="Tucuman">Tucuman</option>
 
-              <option value="Buenos aires">Buenos aires</option>
-              <option value="Jujuy">Jujuy</option>
-              <option value="Catamarca">Catamarca</option>
-              <option value="Cordoba">Cordoba</option>
-              <option value="Santa fe">Santa fe</option>
-              <option value="Formosa">Formosa</option>
-            </select>
+<div class="modal fade" id="productoModal" tabindex="-1" aria-labelledby="productoModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-success">
+        <i class="fab fa-paypal fa-xl mx-1"></i>
+        <h1 class="modal-title fs-5" id="productoModalLabel">Proceso de Pago</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body bg-transparent">
+        <form id="paymentForm">
+          <div class="row mb-2">
+            <div class="col">
+              <label>Nombre Titular de la tarjeta</label>
+              <input type="text" class="form-control" required id="nombre-tarjeta"/>
+              <p class="text-muted">Debe estar escrito igual que en la tarjeta</p>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col d-flex justify-content-end">
-            <button class="btn btn-dark" onsubmit="eliminarTodo(event)">Guardar</button>
+          <div class="row mb-2">
+            <div class="col">
+              <label for="numeroDeTarjeta">Numero de la tarjeta</label>
+              <input type="text" class="form-control" required id="numeroDeTarjeta" placeholder="123412341234"/>
+            </div>
           </div>
-        </div>
-      </form>
+          <div class="row mb-2">
+            <div class="col">
+              <label>Fecha de caducidad</label>
+              <input type="text" class="form-control" maxlength="5" required id="caducidadTarjeta" placeholder="dd/mm"/>
+            </div>
+            <div class="col">
+              <label>Codigo de seguridad</label>
+              <input type="text" class="form-control" required id="codigoTarjeta" placeholder="CVC"/>
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col">
+              <label>Envio a...</label>
+              <select class="form-select" aria-label="Default select example" required id="categoriaModal">
+                <option selected>Seleccione una provincia</option>
+                <option value="Tucuman">Tucuman</option>
+                <option value="Buenos aires">Buenos aires</option>
+                <option value="Jujuy">Jujuy</option>
+                <option value="Catamarca">Catamarca</option>
+                <option value="Cordoba">Cordoba</option>
+                <option value="Santa fe">Santa fe</option>
+                <option value="Formosa">Formosa</option>
+              </select>
+            </div>
+          </div>
+          <div class="row" id="row-modal">
+            <div class="col d-flex justify-content-end">
+              <button type="sub" class="btn btn-success" id="pagarBtn">Pagar</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-</div>
 </div>

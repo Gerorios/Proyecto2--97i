@@ -1,18 +1,24 @@
 #total{
     height: 50px;
     width: 150px;
-    border: solid yellow;
-    background-color: white;
-    border-radius: 15%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5%;
+    border:  solid black;
+    box-shadow: 0.2rem 0.1rem rgb(56, 55, 55);
 }
-
+#total-modal{
+    height: 2.3rem;
+    width: 6rem;
+    border: solid green;
+    border-radius: 5%;
+}
 .continue-botton{
     background-color: yellow;
     padding: 0.5rem 1.5rem;
     border: none;
     outline: none;
     border-radius: 10px;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
     cursor: pointer;
 }
@@ -27,8 +33,14 @@
     padding-bottom: 15px;
 }
 #boton{
-    margin-bottom: 50px;
+    margin-bottom: 100px;
+    height: 25%;
+    
 }
 #main{
     min-height: 75vh;
 }
+.error {
+    color: red;
+    font-size: 0.875em;
+  }

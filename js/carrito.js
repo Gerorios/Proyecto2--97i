@@ -5,6 +5,7 @@ let nofavs = document.getElementById("contenedor")
 let producto = JSON.parse(localStorage.getItem("productos")) || [];
 let totalcontenedor = document.getElementById("total-content")
 
+ //READ
 const listarCarrito = () => {
    cuerpoTabla.innerHTML = "";
    totalcontenedor.innerHTML="";
@@ -13,10 +14,7 @@ const listarCarrito = () => {
    });
 
    if (productoCarrito.length === 0) {
-       let cartel = document.createElement("div");
-       cartel.classList = "alert alert-danger"
-       cartel.innerHTML="<h2> No hay elementos agregados al carrito</h2>"
-       nofavs.append(cartel);
+    mostrarCarritoVacio();
    }
    productoCarrito.forEach((item) => {
        let tablerow = document.createElement("tr");
@@ -35,6 +33,19 @@ const listarCarrito = () => {
    });
    imprimirTotal();
 }
+
+//Funcion que muestra el carrito vacio si no hay elementos agregado.
+const mostrarCarritoVacio = () => {
+    cuerpoTabla.innerHTML = "";
+    totalcontenedor.innerHTML = "";
+    let cartel = document.createElement("div");
+    cartel.classList = "alert alert-danger";
+    cartel.innerHTML = "<h2> No hay elementos agregados al carrito</h2>";
+    nofavs.innerHTML = ""; 
+    nofavs.append(cartel);
+}
+
+//UPDATE
 //Funcion para actualizar el total de la compra
 const actualizarTotal = () => {
     let total = 0;  
@@ -47,7 +58,7 @@ const actualizarTotal = () => {
     }
     document.querySelector("#total p").textContent = `Total: $${total.toFixed(2)}`;
 }
-
+//READ
 //Funcion para impirmir el cartel del total.
 const imprimirTotal = () =>{
     let productosCarrito = producto.filter((item) =>{
@@ -61,9 +72,9 @@ const imprimirTotal = () =>{
         <div class="w-100 d-flex justify-content-end caja-carrito">
         <div class="d-flex">
           <div class="mx-2 caja-boton-continuar">
-          <button type="button" class="btn" style="background-color: yellow;" data-bs-toggle="modal" id="boton" data-bs-target="#productoModal" data-bs-whatever="@mdo">Ir a pagar</button>
+          <button type="button" class="btn" style="background-color: orangered;" data-bs-toggle="modal" id="boton" data-bs-target="#productoModal" data-bs-whatever="@mdo">Ir a pagar</button>
           </div> 
-          <div id="total" class="d-flex ">
+          <div id="total" class="d-flex">
             <p class="text-center mt-2 mx-3 fs-6 p-1"></p>
           </div>
         </div>
@@ -74,6 +85,8 @@ const imprimirTotal = () =>{
     }
     actualizarTotal();
 }
+
+//DELETE
 //Funcion para eliminar los elementos del carrito
 const eliminarCarrito = (id) =>{
     //Tomo el indice del producto que quiere eliminar
@@ -92,9 +105,55 @@ const eliminarCarrito = (id) =>{
       alert("Proceso Cancelado!")
     }
 }
+
+//Funciones para reinciar la propiedad carrito a false al pagar (Modal).
+const eliminarTodosDelCarrito = () => {
+    producto = producto.map(item => {
+        return { ...item, carrito: false };
+    });
+
+    // Actualizar localStorage
+    localStorage.setItem("productos", JSON.stringify(producto));
+
+    // Mostrar mensaje de carrito vacío
+    mostrarCarritoVacio();
+    listarCarrito();
+}
+
+// Función para validar el formulario (Modal)
+const validarFormulario = () => {
+    const nombreTarjeta = document.getElementById("nombre-tarjeta").value;
+    const numeroDeTarjeta = document.getElementById("numeroDeTarjeta").value;
+    const caducidadTarjeta = document.getElementById("caducidadTarjeta").value;
+    const codigoTarjeta = document.getElementById("codigoTarjeta").value;
+    const categoriaModal = document.getElementById("categoriaModal").value;
+
+    if (!nombreTarjeta || !numeroDeTarjeta || !caducidadTarjeta || !codigoTarjeta || !categoriaModal) {
+        alert("Por favor, complete todos los campos requeridos.");
+        return false;
+    }
+    return true;
+ }
+
+//Funcion que esta pendiente del evento del boton del modal para que al apretarlo se desaten las funciones realizadas previamente.
+document.addEventListener("DOMContentLoaded", () => {
+    const myModal = new bootstrap.Modal(document.getElementById("productoModal"));
+    listarCarrito();
+    // Agregar evento al formulario de pago
+    const paymentForm = document.getElementById("paymentForm");
+    paymentForm.addEventListener("submit", (event) => {
+        if (validarFormulario()) {
+            alert("compra realizada!");
+            eliminarTodosDelCarrito();
+            myModal.hide();
+        }
+    });
+});
+
+
 listarCarrito();
 
-const eliminarTodo = (event)=>{
-    cuerpoTabla.innerHTML="";
-    marcarCarrito();
-}
+
+
+
+
