@@ -12,7 +12,7 @@
       "YTLC" 500;
 }
 body{
-    background-color: rgb(26, 2, 53);
+    background-color: rgba(31, 10, 57, 0.886);
 }
 header{
     background-image: linear-gradient(rgb(41, 24, 46),rgb(39, 4, 63));
@@ -202,6 +202,8 @@ header{
 .marcas-section {
     padding: 20px 0;
     background-color: rgb(26, 2, 53);
+    box-shadow: 0.2rem 0.2rem black;
+
   }
   .marcas-section h2 {
     text-align: center;
@@ -233,6 +235,8 @@ header{
   }
   .marcas-item:hover {
     transform: scale(1.05);
+    color: orangered;
+;
   }
   @media (max-width: 1200px) {
     .marcas-item {

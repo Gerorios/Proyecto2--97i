@@ -6,7 +6,6 @@ let producto = JSON.parse(localStorage.getItem("productos")) || [];
 let totalcontenedor = document.getElementById("total-content")
 
  //READ
-
 const listarCarrito = () => {
    cuerpoTabla.innerHTML = "";
    totalcontenedor.innerHTML="";
@@ -34,6 +33,8 @@ const listarCarrito = () => {
    });
    imprimirTotal();
 }
+
+//Funcion que muestra el carrito vacio si no hay elementos agregado.
 const mostrarCarritoVacio = () => {
     cuerpoTabla.innerHTML = "";
     totalcontenedor.innerHTML = "";
@@ -42,7 +43,7 @@ const mostrarCarritoVacio = () => {
     cartel.innerHTML = "<h2> No hay elementos agregados al carrito</h2>";
     nofavs.innerHTML = ""; 
     nofavs.append(cartel);
-// }
+}
 
 //UPDATE
 //Funcion para actualizar el total de la compra
@@ -57,8 +58,6 @@ const actualizarTotal = () => {
     }
     document.querySelector("#total p").textContent = `Total: $${total.toFixed(2)}`;
 }
-
-
 //READ
 //Funcion para impirmir el cartel del total.
 const imprimirTotal = () =>{
@@ -107,9 +106,7 @@ const eliminarCarrito = (id) =>{
     }
 }
 
-
-//Funciones para reinciar al pagar con el modal
-
+//Funciones para reinciar la propiedad carrito a false al pagar (Modal).
 const eliminarTodosDelCarrito = () => {
     producto = producto.map(item => {
         return { ...item, carrito: false };
@@ -122,15 +119,41 @@ const eliminarTodosDelCarrito = () => {
     mostrarCarritoVacio();
     listarCarrito();
 }
-document.addEventListener("DOMContentLoaded", () => {
-    listarCarrito();
 
-    const pagarBtn = document.getElementById("pagarBtn");
-    pagarBtn.addEventListener("click", () => {
-        eliminarTodosDelCarrito();
+// Función para validar el formulario (Modal)
+const validarFormulario = () => {
+    const nombreTarjeta = document.getElementById("nombre-tarjeta").value;
+    const numeroDeTarjeta = document.getElementById("numeroDeTarjeta").value;
+    const caducidadTarjeta = document.getElementById("caducidadTarjeta").value;
+    const codigoTarjeta = document.getElementById("codigoTarjeta").value;
+    const categoriaModal = document.getElementById("categoriaModal").value;
+
+    if (!nombreTarjeta || !numeroDeTarjeta || !caducidadTarjeta || !codigoTarjeta || !categoriaModal) {
+        alert("Por favor, complete todos los campos requeridos.");
+        return false;
+    }
+    return true;
+ }
+
+//Funcion que esta pendiente del evento del boton del modal para que al apretarlo se desaten las funciones realizadas previamente.
+document.addEventListener("DOMContentLoaded", () => {
+    const myModal = new bootstrap.Modal(document.getElementById("productoModal"));
+    listarCarrito();
+    // Agregar evento al formulario de pago
+    const paymentForm = document.getElementById("paymentForm");
+    paymentForm.addEventListener("submit", (event) => {
+        if (validarFormulario()) {
+            alert("compra realizada!");
+            eliminarTodosDelCarrito();
+            myModal.hide();
+        }
     });
 });
 
 
 listarCarrito();
+
+
+
+
 
