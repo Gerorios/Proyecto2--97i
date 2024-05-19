@@ -12,7 +12,12 @@
       "YTLC" 500;
 }
 body{
-    background-color: rgba(31, 10, 57, 0.886);
+    background-image: url("/img/jr-korpa-jy6BJNpEPHI-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
 }
 header{
     background-image: linear-gradient(rgb(41, 24, 46),rgb(39, 4, 63));
@@ -50,6 +55,7 @@ a{
 }
 .nav-item{
     font-size: 20px;
+    
 }
 .links li:hover{
     transform: scale(1.2);
@@ -81,7 +87,7 @@ header{
     display: none;
 }
 .action-btn{
-    background-color: rgb(252, 248, 248);
+    background-color: rgb(255, 255, 255);
     color: #0c0c0c;
     padding: 0.5rem 2rem;
     border: none;
@@ -165,27 +171,72 @@ header{
 #carousel{
     margin-bottom: 25px;
 }
-.contenedor-img{
+ /* .contenedor-img{
     height: 300px;
+    border-radius: 1rem;
+    position: relative;
 }
 .contenedor-img img{
         width: 100%;
-        height: 100%;
+        max-height: 100%;
         object-fit: cover;
         object-position: top;
+        border-radius: 1.2rem;
 }
 .cuerp-card{
-    background-image: linear-gradient(rgb(41, 24, 46),rgb(39, 4, 63));
+    background-color: #474f7a;
     box-shadow: 3px 3px 3px 2px black;
-    height: 100%;
     transition: transform 0.3s ease;
+} */
+
+.card.cuerp-card {
+    max-width: 25rem; /* Ajustar el ancho máximo de la card */
+    margin: .1rem; /* Añadir margen alrededor de la card */
+    border-radius: 0.5rem; /* Redondear las esquinas */
+    text-align: center; /* Centrar el contenido */
+    background-color: black;
+    height: 20rem;
+}
+
+.contenedor-img {
+    height: 150px; /* Ajustar la altura de la imagen */
+    overflow: hidden; /* Ocultar cualquier contenido que desborde */
+    margin: 1rem;
+}
+
+.contenedor-img img {
+    max-width: 100%; /* Ajustar la imagen al ancho de la card */
+    height: auto; /* Mantener la relación de aspecto */
+    position: relative;
+}
+
+.card-title {
+    font-size: 1rem; 
+}
+
+.card-body {
+    padding: 0.75rem; 
+}
+.card-icon-btn {
+    padding: 0.5rem; 
+}
+
+.buton-mas {
+    font-size: 0.9rem; 
+}
+
+.fa-xl {
+    font-size: 1.2rem; 
+}
+
+.precio {
+    font-size: 1.5rem; 
 }
 .cuerp-card:hover {
     transform: scale(1.05);
-  }
-.puntero{
-    cursor: pointer;
-}
+  } 
+  
+
 #contenedor-tabla{
     background-color: white;
 }
@@ -198,11 +249,11 @@ header{
     background-color: red;
 }
 
-/* Estilo de marcas */
+Estilo de marcas 
 .marcas-section {
     padding: 20px 0;
-    background-color: rgb(26, 2, 53);
-    box-shadow: 0.2rem 0.2rem black;
+    background-color: rgb(26, 2, 53); 
+     box-shadow: 0.2rem 0.2rem black;
 
   }
   .marcas-section h2 {
@@ -235,7 +286,7 @@ header{
   }
   .marcas-item:hover {
     transform: scale(1.05);
-    color: orangered;
+    color: white;
 ;
   }
   @media (max-width: 1200px) {
@@ -266,7 +317,7 @@ header{
 
 
 
-/* Footer y estilos */
+
 footer{
     background-image: linear-gradient(rgb(41, 24, 46),rgb(39, 4, 63));
     transition: 0.3ms;

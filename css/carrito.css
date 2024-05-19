@@ -16,9 +16,9 @@
 }
 #boton-abrir-modal{
     border: 0;
-    background-color: orangered;
+    background-color: yellow;
     padding: 1rem;
-    color: white;
+    color: rgb(0, 0, 0);
     text-transform: uppercase;
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
@@ -26,3 +26,4 @@
 #main{
     min-height: 75vh;
 }
+
