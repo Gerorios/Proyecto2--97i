@@ -150,7 +150,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
+//Realizar funciones de validaciones del modal.
+//Realizar esquema y prototipo de la pagina de administracion.
+//
 listarCarrito();
 
 
