@@ -1,30 +1,12 @@
 #total{
-    height: 50px;
-    width: 150px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 5%;
-    border:  solid black;
-    box-shadow: 0.2rem 0.1rem rgb(56, 55, 55);
-}
-#total-modal{
-    height: 2.3rem;
-    width: 6rem;
-    border: solid green;
-    border-radius: 5%;
-}
-.continue-botton{
-    background-color: yellow;
-    padding: 0.5rem 1.5rem;
-    border: none;
-    outline: none;
-    border-radius: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.caja-boton-continuar{
-    margin-top: 12px;
+    display: flex;
+    background-color: rgb(15, 2, 30);;
+    color: white;
+    text-transform: uppercase;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    gap: 1rem;
+    text-transform: uppercase;
 }
 .caja-boton-continuar:hover{
     transform: scale(1.1);
@@ -32,15 +14,15 @@
 .caja-carrito{
     padding-bottom: 15px;
 }
-#boton{
-    margin-bottom: 100px;
-    height: 25%;
-    
+#boton-abrir-modal{
+    border: 0;
+    background-color: orangered;
+    padding: 1rem;
+    color: white;
+    text-transform: uppercase;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
 }
 #main{
     min-height: 75vh;
 }
-.error {
-    color: red;
-    font-size: 0.875em;
-  }
