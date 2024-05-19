@@ -6,7 +6,7 @@ let producto = JSON.parse(localStorage.getItem("productos")) || [];
 let totalcontenedor = document.getElementById("total-content")
 
  //READ
-const listarCarrito = () => {
+const listarCarritoTabla = () => {
    cuerpoTabla.innerHTML = "";
    totalcontenedor.innerHTML="";
    let productoCarrito = producto.filter((item) => {
@@ -23,8 +23,8 @@ const listarCarrito = () => {
            <td class = "fs-6">${item.title}"</td>
            <td class = "fs-5" style="color: green">$${item.price}</td>
            <td>
-               <div class="d-flex p-2 puntero">
-                   <i class="fa fa-trash fa-xl puntero" onclick="eliminarCarrito(${item.id})" aria-hidden="true"></i>
+               <div class="d-flex puntero p-2">
+                   <i class="fa fa-trash fa-xl puntero" onclick="eliminarCarrito(${item.id})" aria-hidden="true" style ="color: red"></i>
                </div>
            </td>
        `;
@@ -71,10 +71,10 @@ const imprimirTotal = () =>{
         let total = `
         <div class="w-100 d-flex justify-content-end caja-carrito">
         <div class="d-flex">
-          <div class="mx-2 caja-boton-continuar">
-          <button type="button" class="btn" style="background-color: orangered;" data-bs-toggle="modal" id="boton" data-bs-target="#productoModal" data-bs-whatever="@mdo">Ir a pagar</button>
+          <div class="caja-boton-continuar">
+          <button type="button" data-bs-toggle="modal" id="boton-abrir-modal" data-bs-target="#productoModal" data-bs-whatever="@mdo">Ir a pagar</button>
           </div> 
-          <div id="total" class="d-flex">
+          <div id="total" class="d-flex ">
             <p class="text-center mt-2 mx-3 fs-6 p-1"></p>
           </div>
         </div>
@@ -117,7 +117,7 @@ const eliminarTodosDelCarrito = () => {
 
     // Mostrar mensaje de carrito vacío
     mostrarCarritoVacio();
-    listarCarrito();
+    listarCarritoTabla();
 }
 
 // Función para validar el formulario (Modal)
@@ -138,10 +138,10 @@ const validarFormulario = () => {
 //Funcion que esta pendiente del evento del boton del modal para que al apretarlo se desaten las funciones realizadas previamente.
 document.addEventListener("DOMContentLoaded", () => {
     const myModal = new bootstrap.Modal(document.getElementById("productoModal"));
-    listarCarrito();
+    listarCarritoTabla();
     // Agregar evento al formulario de pago
-    const paymentForm = document.getElementById("paymentForm");
-    paymentForm.addEventListener("submit", (event) => {
+    const formPago = document.getElementById("form-pago");
+    formPago.addEventListener("submit", (event) => {
         if (validarFormulario()) {
             alert("compra realizada!");
             eliminarTodosDelCarrito();
@@ -152,8 +152,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //Realizar funciones de validaciones del modal.
 //Realizar esquema y prototipo de la pagina de administracion.
-//
-listarCarrito();
+
+listarCarritoTabla();
 
 
 
