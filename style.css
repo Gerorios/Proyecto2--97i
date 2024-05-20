@@ -171,42 +171,25 @@ header{
 #carousel{
     margin-bottom: 25px;
 }
- /* .contenedor-img{
-    height: 300px;
-    border-radius: 1rem;
-    position: relative;
-}
-.contenedor-img img{
-        width: 100%;
-        max-height: 100%;
-        object-fit: cover;
-        object-position: top;
-        border-radius: 1.2rem;
-}
-.cuerp-card{
-    background-color: #474f7a;
-    box-shadow: 3px 3px 3px 2px black;
-    transition: transform 0.3s ease;
-} */
-
 .card.cuerp-card {
-    max-width: 25rem; /* Ajustar el ancho máximo de la card */
-    margin: .1rem; /* Añadir margen alrededor de la card */
-    border-radius: 0.5rem; /* Redondear las esquinas */
-    text-align: center; /* Centrar el contenido */
-    background-color: black;
+    width: 26rem;
+    max-width: 27rem; 
+    margin: .1rem; 
+    border-radius: 0.5rem; 
+    text-align: center; 
+    background-image: linear-gradient(rgb(209, 24, 55),rgb(151, 54, 151));
     height: 20rem;
 }
 
 .contenedor-img {
-    height: 150px; /* Ajustar la altura de la imagen */
-    overflow: hidden; /* Ocultar cualquier contenido que desborde */
+    height: 150px; 
+    overflow: hidden; 
     margin: 1rem;
 }
 
 .contenedor-img img {
-    max-width: 100%; /* Ajustar la imagen al ancho de la card */
-    height: auto; /* Mantener la relación de aspecto */
+    max-width: 100%; 
+    height: auto; 
     position: relative;
 }
 
@@ -235,8 +218,9 @@ header{
 .cuerp-card:hover {
     transform: scale(1.05);
   } 
-  
-
+.puntero{
+    cursor: pointer;
+}
 #contenedor-tabla{
     background-color: white;
 }

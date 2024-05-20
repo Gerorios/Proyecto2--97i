@@ -18,12 +18,13 @@ const listarCarritoTabla = () => {
    }
    productoCarrito.forEach((item) => {
        let tablerow = document.createElement("tr");
+       tablerow.classList = "tablerow";
        let contenidoTabla = `
-           <td class="tablas"><img src="${item.image}" alt="" class ="w-50 mx-5"></td>
-           <td class= "fs-6 tablas">${item.title}"</td>
-           <td class= "fs-5 tablas" style="color: green">$${item.price}</td>
+           <td ><img src="${item.image}" alt="" class ="w-50 mx-5"></td>
+           <td class= "fs-6">${item.title}"</td>
+           <td class= "fs-5" style="color: green;">$${item.price}</td>
            <td>
-               <div class="d-flex puntero p-2">
+               <div class="d-flex puntero p-2 mt-1">
                    <i class="fa fa-trash fa-xl puntero" onclick="eliminarCarrito(${item.id})" aria-hidden="true" style ="color: red"></i>
                </div>
            </td>
