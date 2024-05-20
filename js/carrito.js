@@ -20,7 +20,7 @@ const listarCarritoTabla = () => {
        let tablerow = document.createElement("tr");
        tablerow.classList = "tablerow";
        let contenidoTabla = `
-           <td ><img src="${item.image}" alt="" class ="w-50 mx-5"></td>
+           <td ><img src="${item.image}" alt="" class ="w-25 mx-5"></td>
            <td class= "fs-6">${item.title}"</td>
            <td class= "fs-5" style="color: green;">$${item.price}</td>
            <td>
@@ -101,7 +101,7 @@ const eliminarCarrito = (id) =>{
       producto[index].carrito = !producto[index].carrito
       //Actualizo BD
       localStorage.setItem("productos",JSON.stringify(producto));
-      listarCarrito();
+      listarCarritoTabla();
     }else{
       alert("Proceso Cancelado!")
     }
@@ -150,10 +150,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
-
-//Realizar funciones de validaciones del modal.
-//Realizar esquema y prototipo de la pagina de administracion.
-
 listarCarritoTabla();
 
 
