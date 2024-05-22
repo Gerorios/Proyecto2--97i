@@ -127,42 +127,12 @@ const validarFormulario = (event) => {
     const numeroDeTarjeta = document.getElementById("numeroDeTarjeta").value;
     const caducidadTarjeta = document.getElementById("caducidadTarjeta").value;
     const codigoTarjeta = document.getElementById("codigoTarjeta").value;
-    
-    const regexNomb = /^[a-zA-Z\s]+$/;
-    const regexNro = /^\d{18}$/;
-    const regexCadu = /^(0[1-9]|1[0-2])\/\d{2}$/;
-    const regexCvv = /^\d{3}$/;
-
-
-    if (!regexNomb.test(nombreTarjeta)) {
-        document.getElementById("error-name").textContent= `Nombre invalido!`
-        return false;
-
+    let valid = false;
+    if(!nombreTarjeta || !numeroDeTarjeta || !caducidadTarjeta || !codigoTarjeta){
+        return false
     }else{
-    
+        return true;
     }
-
-    if (regexNro.test(numeroDeTarjeta)) {
-        document.getElementById("error-nro").textContent= `Nombre invalido!`
-        return false;
-    }else{
-    
-    }
-
-    if (regexCvv.test(codigoTarjeta)) {
-        document.getElementById("error-code").textContent= `Nombre invalido!`
-        return false;
-    }else{
-        
-    }
-
-    if (regexCadu.test(caducidadTarjeta)) {
-        document.getElementById("error-cadu").textContent= `Nombre invalido!`
-        return false;
-    }else{
-        
-    }
-    event.preventDefault()
 }
    
 
