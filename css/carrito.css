@@ -1,6 +1,6 @@
 #total{
     display: flex;
-    background-color: rgb(15, 2, 30);;
+    background-color: rgba(24, 5, 47, 0.886);
     color: white;
     text-transform: uppercase;
     border-top-right-radius: 1rem;
@@ -18,11 +18,23 @@
     border: 0;
     background-color: orangered;
     padding: 1rem;
-    color: white;
+    color: rgb(1, 1, 1);
     text-transform: uppercase;
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
 }
 #main{
     min-height: 75vh;
+}
+#error-name{
+    color: red;
+}
+#error-code{
+    color: red;
+}
+#error-nro{
+    color: red;
+}
+#error-cadu{
+    color: red;
 }

@@ -100,7 +100,7 @@ const eliminarCarrito = (id) =>{
       producto[index].carrito = !producto[index].carrito
       //Actualizo BD
       localStorage.setItem("productos",JSON.stringify(producto));
-      listarCarrito();
+      listarCarritoTabla();
     }else{
       alert("Proceso Cancelado!")
     }
@@ -121,19 +121,49 @@ const eliminarTodosDelCarrito = () => {
 }
 
 // Función para validar el formulario (Modal)
-const validarFormulario = () => {
+const validarFormulario = (event) => {
     const nombreTarjeta = document.getElementById("nombre-tarjeta").value;
     const numeroDeTarjeta = document.getElementById("numeroDeTarjeta").value;
     const caducidadTarjeta = document.getElementById("caducidadTarjeta").value;
     const codigoTarjeta = document.getElementById("codigoTarjeta").value;
-    const categoriaModal = document.getElementById("categoriaModal").value;
+    
+    const regexNomb = /^[a-zA-Z\s]+$/;
+    const regexNro = /^\d{18}$/;
+    const regexCadu = /^(0[1-9]|1[0-2])\/\d{2}$/;
+    const regexCvv = /^\d{3}$/;
 
-    if (!nombreTarjeta || !numeroDeTarjeta || !caducidadTarjeta || !codigoTarjeta || !categoriaModal) {
-        alert("Por favor, complete todos los campos requeridos.");
+
+    if (!regexNomb.test(nombreTarjeta)) {
+        document.getElementById("error-name").textContent= `Nombre invalido!`
         return false;
+
+    }else{
+    
     }
-    return true;
- }
+
+    if (regexNro.test(numeroDeTarjeta)) {
+        document.getElementById("error-nro").textContent= `Nombre invalido!`
+        return false;
+    }else{
+    
+    }
+
+    if (regexCvv.test(codigoTarjeta)) {
+        document.getElementById("error-code").textContent= `Nombre invalido!`
+        return false;
+    }else{
+        
+    }
+
+    if (regexCadu.test(caducidadTarjeta)) {
+        document.getElementById("error-cadu").textContent= `Nombre invalido!`
+        return false;
+    }else{
+        
+    }
+    event.preventDefault()
+}
+   
 
 //Funcion que esta pendiente del evento del boton del modal para que al apretarlo se desaten las funciones realizadas previamente.
 document.addEventListener("DOMContentLoaded", () => {

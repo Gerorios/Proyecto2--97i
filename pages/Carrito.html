@@ -109,12 +109,12 @@
             <span>&copy;Derechos reservados</span>
           </div>
           <div class="col-sm-12 col-md-4 text-center mt-3 cols-responsive" id="redes">
-            <a class="foo" href="/Page/contacto.html"><h6>Contactanos</h6> </a>
+            <a class="foo" href="/Page/contacto.html"><h5>Contactanos</h5> </a>
             <a class="foo" href="/Page/error404.html"
-              ><h6>Privacidad Y Legales</h6></a
+              ><h5>Privacidad Y Legales</h5></a
             >
             <a class="foo" href="/Page/acercadenosotros.html"
-              ><h6>Acerca de Nosotros</h6></a
+              ><h5>Acerca de Nosotros</h5></a
             >
           </div>
         </div>
@@ -150,22 +150,27 @@
               <input type="text" class="form-control" required id="nombre-tarjeta"/>
               <p class="text-muted">Debe estar escrito igual que en la tarjeta</p>
             </div>
+            <div id="error-name"></div>
           </div>
           <div class="row mb-2">
             <div class="col">
               <label for="numeroDeTarjeta">Numero de la tarjeta</label>
               <input type="text" class="form-control" required id="numeroDeTarjeta" placeholder="123412341234"/>
             </div>
+            <div id="error-nro"></div>
           </div>
           <div class="row mb-2">
             <div class="col">
               <label>Fecha de caducidad</label>
               <input type="text" class="form-control" maxlength="5" required id="caducidadTarjeta" placeholder="dd/mm"/>
+              <div class="error-cadu"></div>
             </div>
             <div class="col">
               <label>Codigo de seguridad</label>
               <input type="text" class="form-control" required id="codigoTarjeta" placeholder="CVC"/>
+              <div id="error-code"></div>
             </div>
+
           </div>
           <div class="row mb-2">
             <div class="col">
