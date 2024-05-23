@@ -13,7 +13,7 @@ const crearProducto = (event) =>{
     let title = document.getElementById("titulo").value;
     let description = document.getElementById("descripcion").value;
     let image = document.getElementById("imagen").value;
-    let price = document.getElementById("precio").value;
+    let price = parseFloat(document.getElementById("precio").value); 
     let category = document.getElementById("categoria").value;
 
     let productoN = new productos(
@@ -34,12 +34,8 @@ const crearProducto = (event) =>{
     document.getElementById("precio").value="";
     document.getElementById("categoria").value="";
 
-
     cargarTabla();
 }
-
-
-
 
 const cargarTabla = ()=>{
     cuerpoTabla.innerHTML="";
@@ -54,13 +50,28 @@ const cargarTabla = ()=>{
         <th>
         <div class="d-flex gap-2">
         <i class="fa fa-pencil puntero" aria-hidden="true"></i>
-        <i class="fa fa-trash puntero" aria-hidden="true"></i>
+        <i class="fa fa-trash puntero" onclick="eliminarProducto(${item.id} )"  aria-hidden="true"></i>
         </div>
         </th>
         `
         rowTable.innerHTML=contenido;
         cuerpoTabla.append(rowTable);
     })
+}
+
+const eliminarProducto = (id) =>{
+    let newArray = producto.filter((item)=>{
+        return item.id != id;
+    })
+    let validad = confirm("Seguro que desea eliminar el prodcuto del stock?")
+    if (validad) {
+        producto = [...newArray];
+
+        localStorage.setItem("productos", JSON.stringify(producto));
+    }else{
+        alert("Operacion cancelada ")
+    }
+    cargarTabla();
 }
 
 cargarTabla();

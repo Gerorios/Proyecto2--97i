@@ -33,6 +33,7 @@ const listarCarritoTabla = () => {
        cuerpoTabla.append(tablerow);
    });
    imprimirTotal();
+   actualizarTotal();
 }
 
 //Funcion que muestra el carrito vacio si no hay elementos agregado.
@@ -54,7 +55,7 @@ const actualizarTotal = () => {
 
         if (producto[i].carrito) {
 
-            total += producto[i].price;
+            total += parseInt(producto[i].price);
         }
     }
     document.querySelector("#total p").textContent = `Total: $${total.toFixed(2)}`;
@@ -134,8 +135,6 @@ const validarFormulario = () => {
         return true;
     }
 }
-   
-
 //Funcion que esta pendiente del evento del boton del modal para que al apretarlo se desaten las funciones realizadas previamente.
 document.addEventListener("DOMContentLoaded", () => {
     const myModal = new bootstrap.Modal(document.getElementById("productoModal"));
