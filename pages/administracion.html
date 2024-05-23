@@ -14,7 +14,6 @@
           src="https://kit.fontawesome.com/82f0997eec.js"
           crossorigin="anonymous"
         ></script>
-        <link rel="stylesheet" href="/style.css" />
         <link rel="stylesheet" href="/css/admin.css">
       </head>
 <body>
@@ -38,17 +37,160 @@
           <li><a href="" class="action-btn">Login</a></li>
         </div>
       </header>
-    <main>
-
+    <main id="main">
+        <div class="container-fluid" id="Background-admin">
+            <div class="row my-4">
+                <div class="col">
+                    <h1 class="text-center text-white">Bienvenido administradores 📊</h1>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-12 col-md-12 col-sm-12">
+                    <h4 class="text-center text-white">Agregar producto 📝</h4>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-12 col-md-8 offset-md-2 ">
+                    <form>
+                        <div class="row mb-2">
+                            <div class="col">
+                                <label class="text-white">Título del producto</label>
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  placeholder="Título del producto"
+                                  required
+                                  id="titulo"
+                                />
+                              </div>
+                        </div>
+                        <div class="row mb-1">
+                            <div class="col">
+                                <label class="text-white">Descripcion del producto</label>
+                                <textarea name="Descripcion" id="descripcion" class="form-control" placeholder="Descripcion del producto" required></textarea>
+                              </div>
+                        </div>
+                        <div class="row mb-1">
+                            <div class="col">
+                                <label class="text-white">Agregar una imagen</label>
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  placeholder="Url de la imagen"
+                                  required
+                                  id="imagen"
+                                />
+                              </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="precio" class="text-white">Agregar precio $</label>
+                                <input type="number" id="precio" class="form-control" placeholder="Ingre el valor del producto" min="0" value="0" step="10">
+                            </div>
+                            <div class="col">
+                                <label for="categoria" class="text-white">Ingrese la categoria</label>
+                                <select name="" id="categoria" class="form-control">
+                                    <option selected>Selecione una categoria</option>
+                                    <option value="Monitores">Monitores</option>
+                                    <option value="Placas">Placas madre</option>
+                                    <option value="Disco-rigido">Discos Rigido</option>
+                                    <option value="Disdo-solido">Discos solido</option>
+                                    <option value="Graficas">Graficas</option>
+                                    <option value="Pasta-termica">Pasta termica</option>
+                                    <option value="controles">Controles</option>
+                                    <option value="Fuente"> Fuentes</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col justify-content-end">
+                                <button class="btn btn-light mt-2" onclick="crearProducto(event)">Agregar Producto</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="container my-3">
+                <div class="row ">
+                    <h4 class="text-white fw-bold">Stock disponible</h4>
+                    <div class="col" id="contenedor-tabla">
+                        <table class="table border-2">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Titulo</th>
+                                    <th>Descripcion</th>
+                                    <th>categoria</th>
+                                    <th>Precio</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="cuerpo-tabla">
+                                <!-- <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
-    <footer>
-    </footer>
+    <footer class="text-light py-2">
+        <div class="row">
+          <div class="col-sm-12 col-md-4 d-flex justify-content-center mt-3">
+            <div id="footerlogo">
+              <a href="index.html"
+                ><img
+                  src="/img/logo/logo-proyecto-2.png"
+                  alt="logo"
+                  width="100"
+              /></a>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-4 text-center mt-4 cols-responsive">
+            <a href="https://www.facebook.com/Disney" target="_blank"
+              ><i
+                class="fa-brands fa-facebook fa-2xl m-4"
+                style="color: #fffcfc"
+              ></i
+            ></a>
+            <a href="https://www.instagram.com/feria.americana.tucuman?igsh=MTY4MDZjZzhjOGZvNg%3D%3D" target="_blank"
+              ><i
+                class="fa-brands fa-instagram fa-2xl m-4 "
+                style="color: #fffcfc"
+              ></i
+            ></a>
+            <a href="https://twitter.com/?lang=es" target="_blank"
+              ><i
+                class="fa-brands fa-twitter fa-2xl m-4 "
+                style="color: #fffcfc"
+              ></i
+            ></a>
+            <br />
+            <span>&copy;Derechos reservados</span>
+          </div>
+          <div class="col-sm-12 col-md-4 text-center mt-3 cols-responsive" id="redes">
+            <a class="foo" href="/Page/contacto.html"><h5>Contactanos</h5> </a>
+            <a class="foo" href="/Page/error404.html"
+              ><h5>Privacidad Y Legales</h5></a
+            >
+            <a class="foo" href="/Page/acercadenosotros.html"
+              ><h5>Acerca de Nosotros</h5></a
+            >
+          </div>
+        </div>
+      </footer>
     <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"
    ></script>
    <script src="https://kit.fontawesome.com/82f0997eec.js" crossorigin="anonymous"></script>
-
+   <script src="/js/global.js"></script>
+   <script src="/js/admin.js"></script>
 </body>
 </html>
