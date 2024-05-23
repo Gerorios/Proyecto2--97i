@@ -122,7 +122,7 @@ const eliminarTodosDelCarrito = () => {
 }
 
 // Función para validar el formulario (Modal)
-const validarFormulario = (event) => {
+const validarFormulario = () => {
     const nombreTarjeta = document.getElementById("nombre-tarjeta").value;
     const numeroDeTarjeta = document.getElementById("numeroDeTarjeta").value;
     const caducidadTarjeta = document.getElementById("caducidadTarjeta").value;
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
     listarCarritoTabla();
     // Agregar evento al formulario de pago
     const formPago = document.getElementById("form-pago");
-    formPago.addEventListener("submit", (event) => {
+    formPago.addEventListener("submit", () => {
         if (validarFormulario()) {
             alert("compra realizada!");
             eliminarTodosDelCarrito();
