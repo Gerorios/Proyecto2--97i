@@ -12,7 +12,7 @@
       "YTLC" 500;
 }
 body{
-    background-image: linear-gradient(rgb(54, 52, 52), rgb(59, 10, 59));
+    background-image: linear-gradient(rgb(47, 16, 43), rgb(59, 6, 59));
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -236,3 +236,9 @@ td img {
       text-align: right;
     }
   }
+
+  #cabeza-modal{
+    background-color: dimgray;
+  }
+
+  

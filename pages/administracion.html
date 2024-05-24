@@ -49,8 +49,8 @@
             <div class="container-fluid my-3">
                 <div class="row">
                     <div class="w-100 d-flex justify-content-between">
-                      <h4 class="text-white fw-bold mt-2">Stock disponible</h4>
-                      <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#modalAdmin" data-bs-whatever="@mdo">Añadir</button>
+                      <h3 class="text-white fw-bold mt-2">Stock disponible 📝</h3>
+                      <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#modalAdmin" data-bs-whatever="@mdo">Añadir <i class="fa-solid fa-plus mx-1"></i></button>
                     </div>
                     <div class="col" id="contenedor-tabla">
                         <table class="table border-2">
@@ -129,7 +129,6 @@
     crossorigin="anonymous"
    ></script>
    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
    <script src="https://kit.fontawesome.com/82f0997eec.js" crossorigin="anonymous"></script>
    <script src="/js/global.js"></script>
@@ -137,14 +136,15 @@
 </body>
 </html>
  
+<!---------------------------------------------------------- MODAL AgregarProducto ------------------------------------- -->
 <div class="modal fade" id="modalAdmin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Añadir productos al stock</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-header" id="cabeza-modal">
+        <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Añadir productos al stock</h1>
+        <button type="button" class="btn btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" i>
         <form onsubmit="crearProducto(event)">
           <div class="row mb-2">
               <div class="col">
@@ -199,8 +199,82 @@
           </div>
       
       </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-success" >Añadir producto</button>
+      <div class="modal-footer" id="pie-modal">
+        <button type="submit" class="btn btn-light" >Añadir producto</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- ---------------------------------------------------------------MODAL editar productos --------------------------------------------------->
+<div class="modal fade" id="modalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" id="cabeza-modal">
+        <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Añadir productos al stock</h1>
+        <button type="button" class="btn btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" i>
+        <form onsubmit="crearProducto(event)">
+          <div class="row mb-2">
+              <div class="col">
+                  <label class="text-dark">Título del producto</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Título del producto"
+                    required
+                    id="titulo"
+                  />
+                </div>
+          </div>
+          <div class="row mb-1">
+              <div class="col">
+                  <label class="text-dark">Descripcion del producto</label>
+                  <textarea name="Descripcion" id="descripcion" class="form-control" placeholder="Descripcion del producto" required></textarea>
+                </div>
+          </div>
+          <div class="row mb-1">
+              <div class="col">
+                  <label class="text-dark">Agregar una imagen</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Url de la imagen"
+                    required
+                    id="imagen"
+                  />
+                </div>
+          </div>
+          <div class="row">
+              <div class="col">
+                  <label for="precio" class="text-dark">Agregar precio $</label>
+                  <input type="number" id="precio" class="form-control" placeholder="Ingre el valor del producto" min="0" value="0" step="10" required>
+              </div>
+              <div class="col">
+                  <label for="categoria" class="text-dark">Ingrese la categoria</label>
+                  <select name="" id="categoria" class="form-control" required>
+                      <option selected>Selecione una categoria</option>
+                      <option value="Monitores">Monitores</option>
+                      <option value="Placas">Placas madre</option>
+                      <option value="Disco-rigido">Discos Rigido</option>
+                      <option value="Disdo-solido">Discos solido</option>
+                      <option value="Graficas">Graficas</option>
+                      <option value="Pasta-termica">Pasta termica</option>
+                      <option value="controles">Controles</option>
+                      <option value="Fuente"> Fuentes</option>
+                      <option value="Notebooks">Notebooks</option>
+                  </select>
+              </div>
+          </div>
+      
+      </div>
+      <div class="modal-footer" id="pie-modal">
+        <button type="submit" class="btn btn-light" >Añadir producto</button>
       </div>
     </form>
     </div>

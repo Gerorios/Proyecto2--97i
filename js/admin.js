@@ -45,7 +45,6 @@ const crearProducto = (event) =>{
     modal.hide();
     
 }
-
 const cargarTabla = ()=>{
     cuerpoTabla.innerHTML="";
     producto.forEach((item)=>{
@@ -58,7 +57,7 @@ const cargarTabla = ()=>{
         <th class="fs-5" style="color: green;">$${item.price}</th>
         <th>
         <div class="d-flex gap-2">
-        <i class="fa fa-pencil puntero" aria-hidden="true"></i>
+        <i class="fa fa-pencil puntero" onclick="editarDatos(${item.id} )"  aria-hidden="true"></i>
         <i class="fa fa-trash puntero" onclick="eliminarProducto(${item.id} )"  aria-hidden="true"></i>
         </div>
         </th>
@@ -82,5 +81,69 @@ const eliminarProducto = (id) =>{
     }
     cargarTabla();
 }
+
+//fUNCION PARA EDITAR DATOS DEL PRODUCTO
+// let Modal = new bootstrap.Modal(document.getElementById(`modal`));
+
+// const editarDatos = (id) =>{
+
+//     let indice = producto.findIndex((item) =>{
+//         return item.id == id;
+//     })
+//     document.getElementById("titulo").value = producto[indice].title;
+//     document.getElementById("descripcion").value = producto[indice].description;
+//     document.getElementById("categoria").value =producto[indice].category;
+//     document.getElementById("precio").value = producto[indice].price;
+//     document.getElementById("imagen").value = producto[indice].image;
+
+//     Modal.show();
+
+// }
+document.addEventListener('DOMContentLoaded', () => {
+   
+
+    const editarDatos = (id) => {
+        let indice = producto.findIndex((item) => {
+            return item.id == id;
+        });
+
+        if (indice !== -1) {
+            document.getElementById("titulo").value = producto[indice].title;
+            document.getElementById("descripcion").value = producto[indice].description;
+            document.getElementById("categoria").value = producto[indice].category;
+            document.getElementById("precio").value = producto[indice].price;
+            document.getElementById("imagen").value = producto[indice].image;
+
+            console.log("Producto encontrado:", producto[indice]);
+            console.log("Mostrando modal");
+            Modal.show();
+        } else {
+            console.error('Producto no encontrado');
+        }
+    };
+});
+const myModal = new bootstrap.Modal(document.getElementById("modalEdit"));
+
+const editarDatos = (id) => {
+    let indice = producto.findIndex((item) => {
+        return item.id == id;
+    });
+
+    if (indice !== -1) {
+        document.getElementById("titulo").value = producto[indice].title;
+        document.getElementById("descripcion").value = producto[indice].description;
+        document.getElementById("categoria").value = producto[indice].category;
+        document.getElementById("precio").value = producto[indice].price;
+        document.getElementById("imagen").value = producto[indice].image;
+
+        console.log("Producto encontrado:", producto[indice]);
+        console.log("Mostrando modal");
+        myModal.show();
+    } else {
+        console.error('Producto no encontrado');
+    }
+};
+
+
 
 cargarTabla();
