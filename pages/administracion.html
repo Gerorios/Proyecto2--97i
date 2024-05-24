@@ -32,24 +32,20 @@
         </div>
         <div class="dropdown_menu">
           <li><a href="">About us</a></li>
-          <li><a href="">Administracion</a></li>
+          <li><a href="/pages/administracion.html">Administracion</a></li>
           <li><a href="/pages/Carrito.html">Ver mi carrito</a></li>
           <li><a href="" class="action-btn">Login</a></li>
         </div>
       </header>
     <main id="main">
-        <div class="container-fluid" id="Background-admin">
+        <div class="container-fluid" >
             <div class="row my-4">
                 <div class="col">
                     <h1 class="text-center text-white">Bienvenido administradores 📊</h1>
                 </div>
             </div>
-            <div class="row my-3">
-                <div class="col-12 col-md-12 col-sm-12">
-                    <h4 class="text-center text-white">Agregar producto 📝</h4>
-                </div>
-            </div>
-            <div class="row mb-3">
+            <div class="row my-3">              
+   <div class="row mb-3">
                 <div class="col-12 col-md-8 offset-md-2 ">
                     <form>
                         <div class="row mb-2">
@@ -111,9 +107,13 @@
                     </form>
                 </div>
             </div>
-            <div class="container my-3">
-                <div class="row ">
-                    <h4 class="text-white fw-bold">Stock disponible</h4>
+            </div>
+            <div class="container-fluid my-3">
+                <div class="row">
+                    <div class="w-100 d-flex justify-content-between">
+                      <h4 class="text-white fw-bold mt-2">Stock disponible</h4>
+                      <button type="button" class="btn btn-success mb-2">Añadir</button>
+                    </div>
                     <div class="col" id="contenedor-tabla">
                         <table class="table border-2">
                             <thead>
