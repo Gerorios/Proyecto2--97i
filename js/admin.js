@@ -6,7 +6,10 @@ let cuerpoTabla = document.getElementById("cuerpo-tabla");
 
 let producto = JSON.parse(localStorage.getItem("productos")) || [];
 
+
+   
 const crearProducto = (event) =>{
+    console.log("funcion crearproducto");
     event.preventDefault();
 
     let id = new Date().getTime();
@@ -15,6 +18,7 @@ const crearProducto = (event) =>{
     let image = document.getElementById("imagen").value;
     let price = parseFloat(document.getElementById("precio").value); 
     let category = document.getElementById("categoria").value;
+    let carrito = false;
 
     let productoN = new productos(
         id,
@@ -23,6 +27,7 @@ const crearProducto = (event) =>{
         description,
         category,
         image,
+        carrito
     )
     producto.push(productoN);
 
@@ -34,7 +39,11 @@ const crearProducto = (event) =>{
     document.getElementById("precio").value="";
     document.getElementById("categoria").value="";
 
+
     cargarTabla();
+    let modal = new bootstrap.Modal(document.getElementById("modalAdmin"));
+    modal.hide();
+    
 }
 
 const cargarTabla = ()=>{

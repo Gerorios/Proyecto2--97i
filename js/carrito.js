@@ -5,6 +5,9 @@ let nofavs = document.getElementById("contenedor")
 let producto = JSON.parse(localStorage.getItem("productos")) || [];
 let totalcontenedor = document.getElementById("total-content")
 
+
+
+//Funciones para la tabla del carrito
  //READ
 const listarCarritoTabla = () => {
    cuerpoTabla.innerHTML = "";
@@ -89,7 +92,7 @@ const imprimirTotal = () =>{
 }
 
 //DELETE
-//Funcion para eliminar los elementos del carrito
+//Funcion para eliminar los elementos del carrito - Esta funcion se realiza si quielo eliminar lo añadido
 const eliminarCarrito = (id) =>{
     //Tomo el indice del producto que quiere eliminar
    let index = producto.findIndex((item)=>{
