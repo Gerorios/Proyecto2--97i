@@ -83,66 +83,28 @@ const eliminarProducto = (id) =>{
 }
 
 //fUNCION PARA EDITAR DATOS DEL PRODUCTO
-// let Modal = new bootstrap.Modal(document.getElementById(`modal`));
-
-// const editarDatos = (id) =>{
-
-//     let indice = producto.findIndex((item) =>{
-//         return item.id == id;
-//     })
-//     document.getElementById("titulo").value = producto[indice].title;
-//     document.getElementById("descripcion").value = producto[indice].description;
-//     document.getElementById("categoria").value =producto[indice].category;
-//     document.getElementById("precio").value = producto[indice].price;
-//     document.getElementById("imagen").value = producto[indice].image;
-
-//     Modal.show();
-
-// }
-document.addEventListener('DOMContentLoaded', () => {
-   
-
-    const editarDatos = (id) => {
-        let indice = producto.findIndex((item) => {
-            return item.id == id;
-        });
-
-        if (indice !== -1) {
-            document.getElementById("titulo").value = producto[indice].title;
-            document.getElementById("descripcion").value = producto[indice].description;
-            document.getElementById("categoria").value = producto[indice].category;
-            document.getElementById("precio").value = producto[indice].price;
-            document.getElementById("imagen").value = producto[indice].image;
-
-            console.log("Producto encontrado:", producto[indice]);
-            console.log("Mostrando modal");
-            Modal.show();
-        } else {
-            console.error('Producto no encontrado');
-        }
-    };
-});
-const myModal = new bootstrap.Modal(document.getElementById("modalEdit"));
-
 const editarDatos = (id) => {
-    let indice = producto.findIndex((item) => {
+        let indice = producto.findIndex((item) => {
         return item.id == id;
     });
 
-    if (indice !== -1) {
-        document.getElementById("titulo").value = producto[indice].title;
-        document.getElementById("descripcion").value = producto[indice].description;
-        document.getElementById("categoria").value = producto[indice].category;
-        document.getElementById("precio").value = producto[indice].price;
-        document.getElementById("imagen").value = producto[indice].image;
+  
+        document.querySelector("#titulo").value = producto[indice].title;
+        document.querySelector("#descripcion").value = producto[indice].description;
+        document.querySelector("#categoria").value = producto[indice].category;
+        document.querySelector("#precio").value = producto[indice].price;
+        document.querySelector("#imagen").value = producto[indice].image;
+        
+        let myModal = new bootstrap.Modal(document.querySelector("#modalEdit")); 
+        myModal.show();
 
         console.log("Producto encontrado:", producto[indice]);
         console.log("Mostrando modal");
-        myModal.show();
-    } else {
-        console.error('Producto no encontrado');
-    }
+        
+        
+
 };
+
 
 
 

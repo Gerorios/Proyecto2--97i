@@ -144,7 +144,7 @@
         <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Añadir productos al stock</h1>
         <button type="button" class="btn btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body" i>
+      <div class="modal-body">
         <form onsubmit="crearProducto(event)">
           <div class="row mb-2">
               <div class="col">
@@ -207,19 +207,16 @@
   </div>
 </div>
 
-
-
-
 <!-- ---------------------------------------------------------------MODAL editar productos --------------------------------------------------->
 <div class="modal fade" id="modalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header" id="cabeza-modal">
-        <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Añadir productos al stock</h1>
+        <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Editar datos del producto</h1>
         <button type="button" class="btn btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" i>
-        <form onsubmit="crearProducto(event)">
+        <form>
           <div class="row mb-2">
               <div class="col">
                   <label class="text-dark">Título del producto</label>
@@ -271,10 +268,9 @@
                   </select>
               </div>
           </div>
-      
       </div>
       <div class="modal-footer" id="pie-modal">
-        <button type="submit" class="btn btn-light" >Añadir producto</button>
+        <button type="submit" class="btn btn-light" >Guardar cambios</button>
       </div>
     </form>
     </div>
