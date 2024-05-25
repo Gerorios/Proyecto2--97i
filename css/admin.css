@@ -240,5 +240,7 @@ td img {
   #cabeza-modal{
     background-color: dimgray;
   }
-
+#cabeza-edit-modal{
+    background-color: rgb(195, 38, 38);
+}
   

@@ -142,10 +142,10 @@
     <div class="modal-content">
       <div class="modal-header" id="cabeza-modal">
         <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Añadir productos al stock</h1>
-        <button type="button" class="btn btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn btn-close " data-bs-dismiss="modal" aria-label="Close" data-bs-target="#modalAdmin"></button>
       </div>
       <div class="modal-body">
-        <form onsubmit="crearProducto(event)">
+        <form onsubmit="crearProducto()">
           <div class="row mb-2">
               <div class="col">
                   <label class="text-dark">Título del producto</label>
@@ -179,7 +179,7 @@
           <div class="row">
               <div class="col">
                   <label for="precio" class="text-dark">Agregar precio $</label>
-                  <input type="number" id="precio" class="form-control" placeholder="Ingre el valor del producto" min="0" value="0" step="10" required>
+                  <input type="number" id="precio" class="form-control" placeholder="Ingre el valor del producto" min="0" value="0" step="0.1" required>
               </div>
               <div class="col">
                   <label for="categoria" class="text-dark">Ingrese la categoria</label>
@@ -207,16 +207,17 @@
   </div>
 </div>
 
-<!-- ---------------------------------------------------------------MODAL editar productos --------------------------------------------------->
+
+
 <div class="modal fade" id="modalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header" id="cabeza-modal">
-        <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Editar datos del producto</h1>
-        <button type="button" class="btn btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-header" id="cabeza-edit-modal">
+        <h1 class="modal-title fs-5 text-dark fw-bold" id="exampleModalLabel">Editar productos</h1>
+        <button type="button" class="btn btn-close " data-bs-dismiss="modal" aria-label="Close" ></button>
       </div>
-      <div class="modal-body" i>
-        <form>
+      <div class="modal-body">
+        <form onsubmit="actualizarDatos()">
           <div class="row mb-2">
               <div class="col">
                   <label class="text-dark">Título del producto</label>
@@ -225,14 +226,14 @@
                     class="form-control"
                     placeholder="Título del producto"
                     required
-                    id="titulo"
+                    id="titulo-edit"
                   />
                 </div>
           </div>
           <div class="row mb-1">
               <div class="col">
                   <label class="text-dark">Descripcion del producto</label>
-                  <textarea name="Descripcion" id="descripcion" class="form-control" placeholder="Descripcion del producto" required></textarea>
+                  <textarea name="Descripcion" id="descripcion-edit" class="form-control" placeholder="Descripcion del producto" required></textarea>
                 </div>
           </div>
           <div class="row mb-1">
@@ -243,18 +244,18 @@
                     class="form-control"
                     placeholder="Url de la imagen"
                     required
-                    id="imagen"
+                    id="imagen-edit"
                   />
                 </div>
           </div>
           <div class="row">
               <div class="col">
                   <label for="precio" class="text-dark">Agregar precio $</label>
-                  <input type="number" id="precio" class="form-control" placeholder="Ingre el valor del producto" min="0" value="0" step="10" required>
+                  <input type="number" id="precio-edit" class="form-control" placeholder="Ingre el valor del producto" min="0" value="0" step="0.1" required>
               </div>
               <div class="col">
                   <label for="categoria" class="text-dark">Ingrese la categoria</label>
-                  <select name="" id="categoria" class="form-control" required>
+                  <select name="" id="categoria-edit" class="form-control" required>
                       <option selected>Selecione una categoria</option>
                       <option value="Monitores">Monitores</option>
                       <option value="Placas">Placas madre</option>
@@ -268,11 +269,15 @@
                   </select>
               </div>
           </div>
+      
       </div>
-      <div class="modal-footer" id="pie-modal">
+      <div class="modal-footer">
         <button type="submit" class="btn btn-light" >Guardar cambios</button>
       </div>
     </form>
     </div>
   </div>
 </div>
+
+
+

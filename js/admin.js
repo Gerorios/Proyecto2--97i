@@ -7,10 +7,11 @@ let cuerpoTabla = document.getElementById("cuerpo-tabla");
 let producto = JSON.parse(localStorage.getItem("productos")) || [];
 
 
+
+
+
+const crearProducto = () =>{
    
-const crearProducto = (event) =>{
-    console.log("funcion crearproducto");
-    event.preventDefault();
 
     let id = new Date().getTime();
     let title = document.getElementById("titulo").value;
@@ -18,7 +19,7 @@ const crearProducto = (event) =>{
     let image = document.getElementById("imagen").value;
     let price = parseFloat(document.getElementById("precio").value); 
     let category = document.getElementById("categoria").value;
-    let carrito = false;
+    let carrito;
 
     let productoN = new productos(
         id,
@@ -84,26 +85,50 @@ const eliminarProducto = (id) =>{
 
 //fUNCION PARA EDITAR DATOS DEL PRODUCTO
 const editarDatos = (id) => {
-        let indice = producto.findIndex((item) => {
+         indice = producto.findIndex((item) => {
         return item.id == id;
     });
-
-  
-        document.querySelector("#titulo").value = producto[indice].title;
-        document.querySelector("#descripcion").value = producto[indice].description;
-        document.querySelector("#categoria").value = producto[indice].category;
-        document.querySelector("#precio").value = producto[indice].price;
-        document.querySelector("#imagen").value = producto[indice].image;
+        const modal = new bootstrap.Modal(document.querySelector("#modalEdit"));
+        document.querySelector("#titulo-edit").value = producto[indice].title;
+        document.querySelector("#descripcion-edit").value = producto[indice].description;
+        document.querySelector("#categoria-edit").value = producto[indice].category;
+        document.querySelector("#precio-edit").value = producto[indice].price;
+        document.querySelector("#imagen-edit").value = producto[indice].image;
         
-        let myModal = new bootstrap.Modal(document.querySelector("#modalEdit")); 
-        myModal.show();
-
+        
+        modal.show();
         console.log("Producto encontrado:", producto[indice]);
         console.log("Mostrando modal");
-        
-        
+    
 
 };
+
+const actualizarDatos = () =>{
+    
+   
+    
+    const modal = new bootstrap.Modal(document.querySelector("#modalEdit"));
+
+    producto[indice].title = document.querySelector("#titulo-edit").value;;
+    producto[indice].description = document.querySelector("#descripcion-edit").value; 
+    producto[indice].category = document.querySelector("#categoria-edit").value; 
+    producto[indice].price = document.querySelector("#precio-edit").value;
+    producto[indice].image = document.querySelector("#imagen-edit").value;
+
+    let validacion = confirm("Seguro que desea realizar los cambios en el producto?")
+    
+    if (validacion) {
+        localStorage.setItem("productos", JSON.stringify(producto));
+        
+    }else{
+        alert("Cambios cancelados");
+    }
+   
+    
+    cargarTabla();
+
+    modal.hide();
+}
 
 
 
