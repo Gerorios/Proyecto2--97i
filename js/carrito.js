@@ -142,11 +142,12 @@ document.addEventListener("DOMContentLoaded", () => {
     listarCarritoTabla();
     // Agregar evento al formulario de pago
     const formPago = document.getElementById("form-pago");
-    formPago.addEventListener("submit", (event) => {
+    formPago.addEventListener("submit", () => {
         if (validarFormulario()) {
             alert("compra realizada!");
             eliminarTodosDelCarrito();
             myModal.hide();
+            location.replace("http://127.0.0.1:5500/index.html");
         }
     });
 });
