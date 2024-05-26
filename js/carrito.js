@@ -5,6 +5,9 @@ let nofavs = document.getElementById("contenedor")
 let producto = JSON.parse(localStorage.getItem("productos")) || [];
 let totalcontenedor = document.getElementById("total-content")
 
+
+
+//Funciones para la tabla del carrito
  //READ
 const listarCarritoTabla = () => {
    cuerpoTabla.innerHTML = "";
@@ -33,6 +36,7 @@ const listarCarritoTabla = () => {
        cuerpoTabla.append(tablerow);
    });
    imprimirTotal();
+   actualizarTotal();
 }
 
 //Funcion que muestra el carrito vacio si no hay elementos agregado.
@@ -54,7 +58,7 @@ const actualizarTotal = () => {
 
         if (producto[i].carrito) {
 
-            total += producto[i].price;
+            total += parseInt(producto[i].price);
         }
     }
     document.querySelector("#total p").textContent = `Total: $${total.toFixed(2)}`;
@@ -88,7 +92,7 @@ const imprimirTotal = () =>{
 }
 
 //DELETE
-//Funcion para eliminar los elementos del carrito
+//Funcion para eliminar los elementos del carrito - Esta funcion se realiza si quielo eliminar lo añadido
 const eliminarCarrito = (id) =>{
     //Tomo el indice del producto que quiere eliminar
    let index = producto.findIndex((item)=>{
@@ -127,15 +131,13 @@ const validarFormulario = () => {
     const numeroDeTarjeta = document.getElementById("numeroDeTarjeta").value;
     const caducidadTarjeta = document.getElementById("caducidadTarjeta").value;
     const codigoTarjeta = document.getElementById("codigoTarjeta").value;
-    const categoriaModal = document.getElementById("categoriaModal").value;
-
-    if (!nombreTarjeta || !numeroDeTarjeta || !caducidadTarjeta || !codigoTarjeta || !categoriaModal) {
-        alert("Por favor, complete todos los campos requeridos.");
-        return false;
+    let valid = false;
+    if(!nombreTarjeta || !numeroDeTarjeta || !caducidadTarjeta || !codigoTarjeta){
+        return false
+    }else{
+        return true;
     }
-    return true;
- }
-
+}
 //Funcion que esta pendiente del evento del boton del modal para que al apretarlo se desaten las funciones realizadas previamente.
 document.addEventListener("DOMContentLoaded", () => {
     const myModal = new bootstrap.Modal(document.getElementById("productoModal"));

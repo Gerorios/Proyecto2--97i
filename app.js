@@ -1,16 +1,4 @@
 
-class productos {
-   constructor(id,title,price,description,category,image,carrito=false){
-      this.id = id;
-      this.title = title;
-      this.price = price;
-      this.description = description;
-      this.category = category;
-      this.image = image;
-      this.carrito = carrito;
-
-   }
- }
  const data = [
    {
      id: 9,
@@ -103,7 +91,7 @@ class productos {
       </div>
       <div class="d-flex w-100 justify-content-between align-items-center p-2 card-icon-btn">
       <div class="m-2 puntero">
-      <i class="${item.carrito ? "fa-solid fa-xmark fa-xl bg-dark" : "fa-solid fa-cart-shopping fa-xl" } " onclick="marcarCarrito(${item.id} )" style="color: white;"></i><a href="" class="btn btn-light mx-2 buton-mas">Ver mas</a>
+      <i class="${item.carrito ? "fa-solid fa-xmark fa-xl bg-dark" : "fa-solid fa-cart-shopping fa-xl"}" onclick="marcarCarrito(${item.id} )" style="color: white;"></i><a href="" class="btn btn-light mx-2 buton-mas">Ver mas</a>
       </div>
       <div class="m-2" >
       <h3 style="color: greenyellow;" class="precio">$${item.price}</h3>
