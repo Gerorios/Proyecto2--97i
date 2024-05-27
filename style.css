@@ -296,7 +296,21 @@ Estilo de marcas
       width: 150px;
     }
   }
-
+.boton-filtros{
+    background-color: #090909;
+    color: yellow;
+    padding: .6rem;
+    border-radius: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.boton-filtros:hover{
+    color: white;
+    background-color: #090909;
+}
+.contenedor-filtros{
+    padding: .5rem;
+}
 footer{
     background-image: linear-gradient(rgb(41, 24, 46),rgb(39, 4, 63));
     transition: 0.3ms;
