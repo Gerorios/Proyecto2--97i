@@ -69,8 +69,8 @@
      carrito: false,
    },
  ];
-
- const producto = JSON.parse(localStorage.getItem("productos")) || [];
+//  localStorage.setItem("productos",JSON.stringify(data));
+let producto = JSON.parse(localStorage.getItem("productos")) || [];
 
  let contenedor = document.querySelector("#contenedor");
 
@@ -104,6 +104,56 @@
       contenedor.append(col);
    })
  }
+
+const ordenarPorPrecio = () =>{
+  let nuevoarray = producto.map((item) =>{
+    return{
+      id: item.id,
+      title: item.title,
+      price: item.price,
+      description: item.description,
+      category: item.category,
+      image: item.image,
+      carrito: item.carrito,
+    }
+  })
+  nuevoarray.sort((a,b) => a.price -b.price)
+
+  producto = nuevoarray;
+
+  localStorage.setItem("productos",JSON.stringify(producto));
+  listarProductos();
+}
+
+const ordernarAlfabeticamente = () => {
+  let nuevoarray = producto.map((item) =>{
+    return{
+      id: item.id,
+      title: item.title,
+      price: item.price,
+      description: item.description,
+      category: item.category,
+      image: item.image,
+      carrito: item.carrito,
+    }
+  })
+
+  nuevoarray.sort((a,b) => {
+    if(a.title > b.title ){
+      return 1;
+    }else if(a.title < b.title){
+      return -1;
+    }
+    else{
+      return 0;
+    }
+  })
+
+  producto = nuevoarray;
+
+  localStorage.setItem("productos",JSON.stringify(producto));
+  listarProductos();
+}
 
  
 listarProductos();
