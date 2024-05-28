@@ -32,38 +32,39 @@ const admin = [
 
 
 
+localStorage.setItem("usuarios",JSON.stringify(admin));
 let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
 const inicioSesion = (event) =>{
     event.preventDefault();
 
-            let nombre = document.querySelector("#nombre_usuarioL").value;
-            let passw = document.querySelector("#contraseña_usuario").value;
+    let nombre = document.querySelector("#nombre_usuarioL").value;
+    let passw = document.querySelector("#contraseña_usuario").value;
 
-            let userData = JSON.parse(localStorage.getItem("usuarios"));
+    let userData = JSON.parse(localStorage.getItem("usuarios"));
 
-            let userFound = false;
-            let isAdmin = false;
+    let userEncotrado = false;
+    let Esadmin = false;
 
-            userData.forEach((item) => {
-                if (nombre === item.nombreDeUsuario && passw === item.contraseña) {
-                    userFound = true;
-                    if (item.admin) {
-                        isAdmin = true;
-                    }
-                }
-            });
-
-            if (userFound) {
-                if (isAdmin) {
-                    location.replace("http://127.0.0.1:5500/pages/administracion.html");
-                } else {
-                    alert("No tienes permisos de administrador.");
-                }
-            } else {
-                alert("Usuario o contraseña incorrectos.");
+    userData.forEach((item) => {
+        if (nombre === item.nombreDeUsuario && passw === item.contraseña) {
+            userEncotrado = true;
+            if (item.admin) {
+                Esadmin = true;
             }
         }
+    });
+
+    if (userEncotrado) {
+        if (Esadmin) {
+            location.replace("http://127.0.0.1:5500/pages/administracion.html");
+        } else {
+            alert("No tienes permisos de administrador.");
+        }
+    } else {
+        alert("Usuario o contraseña incorrectos.");
+    }
+}
 
 
 
