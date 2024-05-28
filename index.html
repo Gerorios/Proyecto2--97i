@@ -25,7 +25,8 @@
           <li><a href="/pages/administracion.html">Administracion</a></li>
           <li><a href="/pages/Carrito.html">Ver mi carrito</a></li>
         </ul>
-        <a href="" class="action-btn">Login</a>
+        <!-- <a href="" class="action-btn">Login</a> -->
+        <button type="button" class="action-btn" data-bs-toggle="modal" data-bs-target="#modalLogin" data-bs-whatever="@mdo">Login</button>
         <div class="toggle-btn" onclick="openMenu()">
           <i class="fa-solid fa-bars"></i>
         </div>
@@ -34,7 +35,7 @@
         <li><a href="">About us</a></li>
         <li><a href="/pages/administracion.html">Administracion</a></li>
         <li><a href="/pages/Carrito.html">Ver mi carrito</a></li>
-        <li><a href="" class="action-btn">Login</a></li>
+        <li><button type="button" class="action-btn" data-bs-toggle="modal" data-bs-target="#modalLogin" data-bs-whatever="@mdo">Login</button></li>
       </div>
     </header>
     <main>
@@ -198,5 +199,100 @@
     <script src="https://kit.fontawesome.com/82f0997eec.js" crossorigin="anonymous"></script>
     <script src="/app.js"></script>
     <script src="/js/global.js"></script>
+    <script src="/js/login.js"></script>
   </body>
 </html>
+
+
+
+
+
+
+
+<!--  MOdal loogin-------------------------------------------------->
+<div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Inicio de sesion</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="inicioSesion(event)">
+          <div class="row mb-2">
+            <div class="col">
+              <label for="Nombre" class="fw-bold">Ingrese su nombre de usuario</label>
+              <input type="text" id="nombre_usuarioL" class="form-control" required placeholder="pepe_1234">
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col">
+              <label for="passw" class="fw-bold">Ingrese su contraseña</label>
+              <input type="password" id="contraseña_usuario" required class="form-control"   placeholder="pepito1234">
+            </div>
+          </div>
+          <div class="modal-footer d-flex justify-content-between ">
+            <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Iniciar sesion</button>
+            <p>No tienes cuenta? <a href="#ModalRegistro" data-bs-target="#modalRegistro" data-bs-toggle="modal" class="text-danger" id="modalLogin">Registrarse</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-------------------------------------Modal registro------------------------------->
+<div class="modal fade" id="modalRegistro" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel2">Registro de usuario</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="row mb-2">
+            <div class="col">
+              <label for="Nombre" class="fw-bold">Ingrese su nombre</label>
+              <input type="text" id="nombre" class="form-control" required placeholder="luis">
+
+            </div>
+            <div class="col">
+              <label for="apellido" class="fw-bold">Ingrese su apellido</label>
+              <input type="text" id="apellido" class="form-control" required placeholder="juarez">
+
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col">
+              <label for="mail" class="fw-bold">Ingrese su mail</label>
+              <input type="mail" id="mail" required class="form-control"   placeholder="pepito1234@hola.com">
+             
+            </div>
+            <div class="col">
+              <label for="mail" class="fw-bold">Ingrese su nombre de usuario</label>
+              <input type="mail" id="nombre_usuario" required class="form-control"   placeholder="pepito1234">
+             
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col">
+              <label for="passw">Ingrese su contraseña</label>
+              <input type="password" id="pasword" required class="form-control">
+              
+            </div>
+            <div class="col">
+              <label for="passw">repita su contraseña</label>
+              <input type="password" required class="form-control">
+            
+            </div>
+          </div>
+          <div class="modal-footer d-flex justify-content-between">
+            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Registrarme</button>
+            <p>ya tienes cuenta?<a href="#modalLogin" class="text-danger mx-1" id="modalRegistro" data-bs-target="#modalLogin" data-bs-toggle="modal">Iniciar sesion</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

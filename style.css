@@ -232,11 +232,9 @@ header{
     background-color: red;
 }
 
-Estilo de marcas 
+/* Estilo de marcas  */
 .marcas-section {
     padding: 20px 0;
-    background-color: rgb(26, 2, 53); 
-     box-shadow: 0.2rem 0.2rem black;
 
   }
   .marcas-section h2 {
@@ -331,3 +329,13 @@ footer{
 footer a:hover{
     transform: scale(1.3);
 }
+
+#modalLogin{
+    font-size: 15px; 
+    font-weight: 800;
+}
+#modalRegistro{
+    font-size: 15px; 
+    font-weight: 800;
+}
+
