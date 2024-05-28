@@ -1,0 +1,32 @@
+#total{
+    display: flex;
+    background-color: rgba(75, 23, 139, 0.744);
+    color: white;
+    text-transform: uppercase;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    gap: 1rem;
+    text-transform: uppercase;
+}
+.caja-boton-continuar:hover{
+    transform: scale(1.1);
+}
+.caja-carrito{
+    padding-bottom: 15px;
+}
+#boton-abrir-modal{
+    border: 0;
+    background-image: linear-gradient(rgb(238, 93, 117),rgb(234, 101, 234));
+    padding: 1rem;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+#main{
+    min-height: 75vh;
+} 
+.tabla-img{
+    background-color: transparent;
+}
+
