@@ -8,31 +8,25 @@ class usuario {
         this.apellido = apellido;
     }
 }
-const admin = [
-    { 
-    nombre: "Geronimo",
-    apellido : "Rios Antenucci",
-    nombreDeUsuario : "gero1108",
-    mail:"antenuccifc@gmail.com",
-    contraseña:"12345",
-    admin : true,
-     },
-     {
-        nombre: "Geronimo",
-        apellido : "Rios Antenucci",
-        nombreDeUsuario : "gero1109",
-        mail:"antenuccifc@gmail.com",
-        contraseña:"123456",
-        admin : false,
-     },
-]
-    
-      
-    
-
-
-
-localStorage.setItem("usuarios",JSON.stringify(admin));
+// const admin = [
+//     { 
+//     nombre: "Geronimo",
+//     apellido : "Rios Antenucci",
+//     nombreDeUsuario : "gero1108",
+//     mail:"antenuccifc@gmail.com",
+//     contraseña:"12345",
+//     admin : true,
+//      },
+//      {
+//         nombre: "Geronimo",
+//         apellido : "Rios Antenucci",
+//         nombreDeUsuario : "gero1109",
+//         mail:"antenuccifc@gmail.com",
+//         contraseña:"123456",
+//         admin : false,
+//      },
+// ]
+// localStorage.setItem("usuarios",JSON.stringify(admin));
 let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
 const inicioSesion = (event) =>{
@@ -57,15 +51,43 @@ const inicioSesion = (event) =>{
 
     if (userEncotrado) {
         if (Esadmin) {
+            alert("Buendia administrador!")
             location.replace("http://127.0.0.1:5500/pages/administracion.html");
         } else {
-            alert("No tienes permisos de administrador.");
+            alert("Bienvenido a TechTuc")
+            location.replace("http://127.0.0.1:5500/index.html")
         }
     } else {
         alert("Usuario o contraseña incorrectos.");
     }
 }
 
+const crearUsuario = (event) =>{
+    event.preventDefault();
+
+    let nombre = document.querySelector("#nombre").value;
+    let apellido = document.querySelector("#apellido").value;
+    let mail = document.querySelector("#mail").value;
+    let username = document.querySelector("#nombre_usuario").value;
+    let contraseña = document.querySelector("#password").value;
+    let admin = false;
+
+    let newUser = new usuario(
+        username,
+        mail,
+        contraseña,
+        admin,
+        nombre,
+        apellido,
+    );
+
+    usuarios.push(newUser);
+
+    localStorage.setItem("usuarios",JSON.stringify(usuarios))
+
+
+    alert("usuario creado correctamente!")
+}
 
 
 
