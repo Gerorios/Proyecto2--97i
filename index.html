@@ -25,10 +25,7 @@
           <li><a href="/pages/administracion.html">Administracion</a></li>
           <li><a href="/pages/Carrito.html">Ver mi carrito</a></li>
         </ul>
-        <!-- <a href="" class="action-btn">Login</a> -->
-        <button type="button" class="action-btn" data-bs-toggle="modal" data-bs-target="#modalLogin" data-bs-whatever="@mdo" id="loginBtn">Login</button>
-        <span id="nombreuser" style="display: none;"></span>
-        <button id="logoutBtn" class="action-btn" style="display: none;">Logout</button>
+        <a class="action-btn"  href="#ModalLogin" data-bs-target="#modalLogin" data-bs-toggle="modal">Login</a>
         <div class="toggle-btn" onclick="openMenu()">
           <i class="fa-solid fa-bars"></i>
         </div>
@@ -215,7 +212,7 @@
 <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header cabeza-modal">
+      <div class="modal-header cabeza-modal border-0">
         <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Inicio de sesion</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -257,7 +254,6 @@
             <div class="col">
               <label for="Nombre" class="fw-bold">Ingrese su nombre</label>
               <input type="text" id="nombre" class="form-control" required placeholder="luis">
-
             </div>
             <div class="col">
               <label for="apellido" class="fw-bold">Ingrese su apellido</label>
