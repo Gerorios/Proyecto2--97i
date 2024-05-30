@@ -6,13 +6,31 @@ let cuerpoTabla = document.getElementById("cuerpo-tabla");
 
 let producto = JSON.parse(localStorage.getItem("productos")) || [];
 
+const validarUsuario = () =>{
 
+    let usuarios = JSON.parse(localStorage.getItem("actualUsuario")) || [];
 
+    if (usuarios.admin) {
+        cargarTabla();
 
+    }else{
+        main.innerHTML = "";
+
+        let col = document.createElement("div");
+        col.classList = "col mt-3"
+
+        let content = `
+        <div class="alert alert-danger" role="alert">
+        No tiene permiso para acceder a esta página!
+      </div>`
+
+       col.innerHTML=content;
+       main.append(col);
+
+    }
+}
 
 const crearProducto = () =>{
-   
-
     let id = new Date().getTime();
     let title = document.getElementById("titulo").value;
     let description = document.getElementById("descripcion").value;
@@ -104,9 +122,6 @@ const editarDatos = (id) => {
 };
 
 const actualizarDatos = () =>{
-    
-   
-    
     const modal = new bootstrap.Modal(document.querySelector("#modalEdit"));
 
     producto[indice].title = document.querySelector("#titulo-edit").value;;
@@ -131,6 +146,4 @@ const actualizarDatos = () =>{
 }
 
 
-
-
-cargarTabla();
+validarUsuario();
