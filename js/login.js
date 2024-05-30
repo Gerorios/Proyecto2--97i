@@ -14,7 +14,7 @@ let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
 const actualizarNavBar = () => {
     const username = localStorage.getItem('loggedInUser');
-    const loginBtn = document.getElementById('loginBtn');
+    const loginBtn = document.getElementsByClassName('action-btn');
     const usernameDisplay = document.getElementById('nombreuser');
     const logoutBtn = document.getElementById('logoutBtn');
 
