@@ -237,10 +237,27 @@ td img {
     }
   }
 
-  #cabeza-modal{
+ #cabeza-modal{
     background-color: dimgray;
   }
 #cabeza-edit-modal{
     background-color: rgb(195, 38, 38);
 }
   
+.cabeza-modal{
+    background-image: linear-gradient(rgb(209, 24, 55),rgb(151, 54, 151));
+}
+.cuerpo-modal{
+    background: black;
+    color: white;
+}
+#modalLogin{
+    font-size: 16px; 
+    font-weight: 800;
+    color: pink;
+}
+#modalRegistro{
+    font-size: 15px; 
+    font-weight: 800;
+}
+

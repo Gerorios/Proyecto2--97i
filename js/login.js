@@ -27,9 +27,10 @@ const inicioSesion = (event) =>{
             if (item.admin) {
                 Esadmin = true;
             }
+            localStorage.setItem("actualUsuario",JSON.stringify(item));
         } 
     });
-
+    
     if (userEncotrado) { 
         if (Esadmin) {
             alert("Buendia administrador!")
@@ -41,6 +42,8 @@ const inicioSesion = (event) =>{
     } else {
         alert("Usuario o contraseña incorrectos.");
     }
+
+    actualizarBtnLogin();
 }
 
 const crearUsuario = (event) =>{
@@ -61,6 +64,7 @@ const crearUsuario = (event) =>{
         nombre,
         apellido,
     );
+
      usuarios.push(newUser);
 
     localStorage.setItem("usuarios",JSON.stringify(usuarios))
@@ -68,5 +72,34 @@ const crearUsuario = (event) =>{
 
     alert("usuario creado correctamente!")
 }
+
+const actualizarBtnLogin = () =>{
+    let loginBtn = document.querySelector("#loginButton");
+    let actualUsuario = JSON.parse(localStorage.getItem("actualUsuario"));
+
+    if (actualUsuario) {
+        loginBtn.textContent = `Logout`;
+        loginBtn.removeAttribute("data-bs-toggle");
+        loginBtn.removeAttribute("data-bs-target");
+        loginBtn.onclick = cerrarSesion;
+      } else {
+        loginBtn.textContent = "Login";
+        loginBtn.setAttribute("data-bs-toggle", "modal");
+        loginBtn.setAttribute("data-bs-target", "#modalLogin");
+        loginBtn.onclick = null;
+      }
+}
+
+const cerrarSesion = () =>{
+    localStorage.removeItem("actualUsuario");
+    alert("Sesion cerrada correctamente!")
+    actualizarBtnLogin();
+    location.replace("../index.html");
+}
+
+document.addEventListener("DOMContentLoaded",() =>{
+    actualizarBtnLogin();
+});
+
 
 
