@@ -34,7 +34,7 @@
         <li><a href="">About us</a></li>
         <li><a href="/pages/administracion.html">Administracion</a></li>
         <li><a href="/pages/Carrito.html">Ver mi carrito</a></li>
-        <li><button type="button" class="action-btn" data-bs-toggle="modal" data-bs-target="#modalLogin" data-bs-whatever="@mdo">Login</button></li>
+        <li><a class="action-btn"  href="#ModalLogin" data-bs-target="#modalLogin" data-bs-toggle="modal" id="loginButtonDropdownMenu">Login</a></li>
       </div>
     </header>
     <main>
@@ -230,9 +230,13 @@
               <input type="password" id="contraseña_usuario" required class="form-control"   placeholder="pepito1234">
             </div>
           </div>
-          <div class="modal-footer d-flex justify-content-between ">
-            <button type="submit" class="btn btn-light" data-bs-dismiss="modal">Iniciar sesion</button>
-            <p>No tienes cuenta? <a href="#ModalRegistro" data-bs-target="#modalRegistro" data-bs-toggle="modal" id="modalLogin">Registrarse</a></p>
+          <div class="row">
+            <div class="col">
+              <div class="d-flex justify-content-between border-0">
+                <div class="mt-2"><button type="submit" class="btn btn-light" data-bs-dismiss="modal">Iniciar sesion</button></div>
+                <div class="mt-2"><p>No tienes cuenta? <a href="#ModalRegistro" data-bs-target="#modalRegistro" data-bs-toggle="modal" class="modalLogin">Registrarse</a></p></div>
+              </div>
+            </div>
           </div>
         </form>
       </div>
@@ -244,11 +248,11 @@
 <div class="modal fade" id="modalRegistro" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel2">Registro de usuario</h1>
+      <div class="modal-header cabeza-modal border-0">
+        <h1 class="modal-title fs-5 text-white" id="exampleModalLabel2">Registro de usuario</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body cuerpo-modal">
         <form onsubmit="crearUsuario(event)">
           <div class="row mb-2">
             <div class="col">
@@ -276,18 +280,21 @@
           <div class="row mb-2">
             <div class="col">
               <label for="passw">Ingrese su contraseña</label>
-              <input type="password" id="password" required class="form-control">
+              <input type="password" id="password" required class="form-control" placeholder="**************">
               
             </div>
             <div class="col">
               <label for="passw">repita su contraseña</label>
-              <input type="password" required class="form-control">
-            
+              <input type="password" required class="form-control" placeholder="**************">
             </div>
           </div>
-          <div class="modal-footer d-flex justify-content-between">
-            <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Registrarme</button>
-            <p>ya tienes cuenta?<a href="#modalLogin" class="text-danger mx-1" id="modalRegistro" data-bs-target="#modalLogin" data-bs-toggle="modal">Iniciar sesion</a></p>
+          <div class="row">
+            <div class="col">
+              <div class="d-flex justify-content-between border-0">
+                <div class="mt-1"><button type="submit" class="btn btn-light" data-bs-dismiss="modal">Registrarme</button></div>
+                <div class="mt-2"><p>ya tienes cuenta?<a href="#modalLogin" class="mx-2" id="modalRegistro" data-bs-target="#modalLogin" data-bs-toggle="modal">Iniciar sesion</a></p></div>
+              </div>
+            </div>
           </div>
         </form>
       </div>

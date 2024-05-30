@@ -8,6 +8,18 @@ class usuario {
         this.apellido = apellido;
     }
 }
+const admin  = [
+    {
+        nombreDeUsuario: "Geroadmin123",
+        mail:"antenuccifc@gmail.com",
+        contraseña: "123456",
+        admin: true,
+        nombre:"Geronimo",
+        apellido: "Rios Antenucci",
+    }
+]
+
+;
 let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
 const inicioSesion = (event) =>{
@@ -75,18 +87,31 @@ const crearUsuario = (event) =>{
 
 const actualizarBtnLogin = () =>{
     let loginBtn = document.querySelector("#loginButton");
+    let loginBtnDropdownMenu = document.querySelector("#loginButtonDropdownMenu");
     let actualUsuario = JSON.parse(localStorage.getItem("actualUsuario"));
 
     if (actualUsuario) {
-        loginBtn.textContent = `Logout`;
+        loginBtn.innerHTML = `<i class="fa-solid fa-right-from-bracket mx-1"></i>Logout`
         loginBtn.removeAttribute("data-bs-toggle");
         loginBtn.removeAttribute("data-bs-target");
         loginBtn.onclick = cerrarSesion;
+
+        loginBtnDropdownMenu.innerHTML = `<i class="fa-solid fa-right-from-bracket mx-1 mt-1"></i>Logout`;
+        loginBtnDropdownMenu.removeAttribute("data-bs-toggle");
+        loginBtnDropdownMenu.removeAttribute("data-bs-target");
+        loginBtnDropdownMenu.onclick = cerrarSesion;
+
+
       } else {
         loginBtn.textContent = "Login";
         loginBtn.setAttribute("data-bs-toggle", "modal");
         loginBtn.setAttribute("data-bs-target", "#modalLogin");
         loginBtn.onclick = null;
+
+        loginBtnDropdownMenu.textContent = "Login";
+        loginBtnDropdownMenu.setAttribute("data-bs-toggle", "modal");
+        loginBtnDropdownMenu.setAttribute("data-bs-target", "#modalLogin");
+        loginBtnDropdownMenu.onclick = null;
       }
 }
 
