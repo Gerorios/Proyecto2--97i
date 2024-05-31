@@ -149,6 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("compra realizada!");
             eliminarTodosDelCarrito();
             myModal.hide();
+            location.replace("http://127.0.0.1:5500/index.html");
         }
     });
 });
