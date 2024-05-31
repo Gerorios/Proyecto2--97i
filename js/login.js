@@ -20,7 +20,7 @@ const admin  = [
 ]
 
 ;
-let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
 
 const inicioSesion = (event) =>{
     event.preventDefault();

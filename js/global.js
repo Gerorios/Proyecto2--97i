@@ -10,6 +10,7 @@ class productos {
 
   }
 }
+let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
 const marcarCarrito = (id) =>{
     let index = producto.findIndex((item)=>{
