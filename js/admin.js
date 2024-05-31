@@ -145,5 +145,9 @@ const actualizarDatos = () =>{
     modal.hide();
 }
 
+let contenedorTablaUsuario = document.getElementById("contenedor-tabla-usuario");
+
+let cuerpoTablaUsuario = document.getElementById("cuerpo-tabla-usuario");
+
 
 validarUsuario();
