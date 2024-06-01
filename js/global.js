@@ -28,7 +28,5 @@ const openMenu = () =>{
    dropdownMenu.classList.toggle("open")
 }
 
-let btnLogin = document.querySelector(".action-btn");
-
 
 

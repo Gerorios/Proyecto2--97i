@@ -8,8 +8,21 @@ class usuario {
         this.apellido = apellido;
     }
 }
+const admin  = [
+    {
+        nombreDeUsuario: "Geroadmin123",
+        mail:"antenuccifc@gmail.com",
+        contraseña: "123456",
+        admin: true,
+        nombre:"Geronimo",
+        apellido: "Rios Antenucci",
+    }
+]
+
+;
 let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
+<<<<<<< HEAD
 
 
 const actualizarNavBar = () => {
@@ -31,9 +44,8 @@ const actualizarNavBar = () => {
 
 document.addEventListener('DOMContentLoaded', actualizarNavBar);
 
-
 const inicioSesion = (event) =>{
-    // event.preventDefault();
+    event.preventDefault();
 
     let nombre = document.querySelector("#nombre_usuarioL").value;
     let passw = document.querySelector("#contraseña_usuario").value;
@@ -49,12 +61,11 @@ const inicioSesion = (event) =>{
             if (item.admin) {
                 Esadmin = true;
             }
-        }
+            localStorage.setItem("actualUsuario",JSON.stringify(item));
+        } 
     });
-
-    if (userEncotrado) {
-        localStorage.setItem("loggedInUser",nombre);
-        actualizarNavBar(); 
+    
+    if (userEncotrado) { 
         if (Esadmin) {
             alert("Buendia administrador!")
             location.replace("http://127.0.0.1:5500/pages/administracion.html");
@@ -65,6 +76,8 @@ const inicioSesion = (event) =>{
     } else {
         alert("Usuario o contraseña incorrectos.");
     }
+
+    actualizarBtnLogin();
 }
 
 const crearUsuario = (event) =>{
@@ -86,7 +99,7 @@ const crearUsuario = (event) =>{
         apellido,
     );
 
-    usuarios.push(newUser);
+     usuarios.push(newUser);
 
     localStorage.setItem("usuarios",JSON.stringify(usuarios))
 
@@ -94,13 +107,46 @@ const crearUsuario = (event) =>{
     alert("usuario creado correctamente!")
 }
 
-const logout = () => {
-    localStorage.removeItem('loggedInUser');
-    actualizarNavBar();
-    alert("Has cerrado sesión.");
-    location.replace("/index.html");
-};
+const actualizarBtnLogin = () =>{
+    let loginBtn = document.querySelector("#loginButton");
+    let loginBtnDropdownMenu = document.querySelector("#loginButtonDropdownMenu");
+    let actualUsuario = JSON.parse(localStorage.getItem("actualUsuario"));
 
-document.getElementById('logoutBtn').addEventListener('click', logout);
+    if (actualUsuario) {
+        loginBtn.innerHTML = `<i class="fa-solid fa-right-from-bracket mx-1"></i>Logout`
+        loginBtn.removeAttribute("data-bs-toggle");
+        loginBtn.removeAttribute("data-bs-target");
+        loginBtn.onclick = cerrarSesion;
+
+        loginBtnDropdownMenu.innerHTML = `<i class="fa-solid fa-right-from-bracket mx-1 mt-1"></i>Logout`;
+        loginBtnDropdownMenu.removeAttribute("data-bs-toggle");
+        loginBtnDropdownMenu.removeAttribute("data-bs-target");
+        loginBtnDropdownMenu.onclick = cerrarSesion;
+
+
+      } else {
+        loginBtn.textContent = "Login";
+        loginBtn.setAttribute("data-bs-toggle", "modal");
+        loginBtn.setAttribute("data-bs-target", "#modalLogin");
+        loginBtn.onclick = null;
+
+        loginBtnDropdownMenu.textContent = "Login";
+        loginBtnDropdownMenu.setAttribute("data-bs-toggle", "modal");
+        loginBtnDropdownMenu.setAttribute("data-bs-target", "#modalLogin");
+        loginBtnDropdownMenu.onclick = null;
+      }
+}
+
+const cerrarSesion = () =>{
+    localStorage.removeItem("actualUsuario");
+    alert("Sesion cerrada correctamente!")
+    actualizarBtnLogin();
+    location.replace("../index.html");
+}
+
+document.addEventListener("DOMContentLoaded",() =>{
+    actualizarBtnLogin();
+});
+
 
 
