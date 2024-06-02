@@ -165,7 +165,7 @@ const cargarTablaUser = () => {
         <th class="fs-6">${users.admin ? "Admin" : "User"} </th>
         <th>
         <div class="d-flex gap-2">
-        <i class="fa-solid fa-arrow-up puntero" style="color: #04ff00;"></i>
+        <i class="fa-solid fa-arrow-up puntero" onclick="hacerAdmin(${users.id})" style="color: #04ff00;"></i>
         <i class="fa-solid fa-ban puntero" style="color: #ff0000;"></i>
         </div>
         </th>
@@ -175,5 +175,20 @@ const cargarTablaUser = () => {
 
     })
 }
+
+const hacerAdmin = (id) =>{
+    
+    let indice = usuarios.findIndex((item)=>{
+        return item.id == id;
+      });
+      usuarios[indice].admin = !usuarios[indice].admin;
+    
+      localStorage.setItem("usuarios",JSON.stringify(usuarios));
+    
+      cargarTablaUser();
+}
+  
+
+
 
 validarUsuario();
