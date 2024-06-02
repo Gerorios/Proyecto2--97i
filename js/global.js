@@ -10,6 +10,7 @@ class productos {
 
   }
 }
+let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
 const marcarCarrito = (id) =>{
     let index = producto.findIndex((item)=>{
@@ -21,7 +22,6 @@ const marcarCarrito = (id) =>{
   
     listarProductos();
   }
-
 const toggleBtn = document.querySelector(".toggle-btn")
 const dropdownMenu = document.querySelector(".dropdown_menu")
 const openMenu = () =>{

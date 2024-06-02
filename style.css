@@ -37,7 +37,6 @@ header{
     width: auto;
     border-radius: 50%;
     transition: all 0.4;
-    margin-top: 25px;
 }
 .logo img:hover{
     transform: scale(1.2);
@@ -317,6 +316,12 @@ footer{
 #footerlogo:hover{
     transform: scale(1.2);
 }
+#footerlogo img{
+    height: 100px;
+    width: auto;
+    border-radius: 50%;
+    transition: all 0.4;
+}
 @media screen and (min-width:0px) and (max-width: 750px) {
     #footerlogo{
         display: none;
@@ -348,4 +353,6 @@ footer a:hover{
     background: black;
     color: white;
 }
+
+
 

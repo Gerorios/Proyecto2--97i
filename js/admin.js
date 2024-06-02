@@ -12,6 +12,7 @@ const validarUsuario = () =>{
 
     if (usuarios.admin) {
         cargarTabla();
+        cargarTablaUser();
 
     }else{
         main.innerHTML = "";
@@ -145,9 +146,96 @@ const actualizarDatos = () =>{
     modal.hide();
 }
 
-let contenedorTablaUsuario = document.getElementById("contenedor-tabla-usuario");
+let contenedorTablaUsuario = document.getElementById("contenedor-tabla-usuarios");
 
-let cuerpoTablaUsuario = document.getElementById("cuerpo-tabla-usuario");
+let cuerpoTablaUsuario = document.getElementById("cuerpo-tabla-usuarios");
+
+
+
+const cargarTablaUser = () => {
+    cuerpoTablaUsuario.innerHTML = "";
+
+    usuarios.forEach((users) =>{
+        let rowTable = document.createElement("tr");
+        let contenido = `
+        <td>${users.nombre}</td>
+        <th class="fs-6">${users.apellido} </th>
+        <th class="fs-6">${users.nombreDeUsuario}</th>
+        <th class="fs-6">${users.mail} </th>
+        <th class="fs-6">${users.admin ? "Admin" : "User"} </th>
+        <th>
+        <div class="d-flex gap-2">
+        <i class="fa-solid fa-arrow-up puntero" onclick="hacerAdmin(${users.id})" style="color: #04ff00;"></i>
+        <i class="fa-solid fa-arrow-down puntero" onclick="hacerUsuario(${users.id} )" style="color: #d01616;"></i>
+        <i class="fa-solid fa-ban puntero" onclick="eliminarUser(${users.id} )" style="color: #ff0000;"></i>
+        </div>
+        </th>
+        `
+        rowTable.innerHTML=contenido;
+        cuerpoTablaUsuario.append(rowTable);
+
+    })
+}
+
+const hacerAdmin = (id) =>{
+    
+    let indice = usuarios.findIndex((item)=>{
+        return item.id == id;
+      });
+      if (usuarios[indice].admin) {
+        alert("El usuario ya es administrador")
+      }else{
+        let validar = confirm("Seguro que desea ascender a admin?")
+
+        if (validar) {
+          usuarios[indice].admin = true;
+      
+          localStorage.setItem("usuarios",JSON.stringify(usuarios)); 
+        }
+      }
+    
+      cargarTablaUser();
+}
+
+const hacerUsuario = (id) =>{
+    let indice = usuarios.findIndex((item)=>{
+        return item.id == id;
+      });
+
+      if (!usuarios[indice].admin) {
+        alert("El usuario ya es user")
+      }else{
+        let validar = confirm("Seguro que desea descender a user?")
+        if (validar) {
+          usuarios[indice].admin = false;
+      
+          localStorage.setItem("usuarios",JSON.stringify(usuarios));
+        }
+      }
+
+
+      cargarTablaUser();
+}
+  
+const eliminarUser =(id) =>{
+    let posicion = usuarios.findIndex((user) =>{
+        return user.id == id;
+    })
+    
+
+    let validar = confirm("Seguro que desea banear el usuario?");
+    if (validar) {
+        usuarios.splice(posicion,1);
+        localStorage.setItem("usuarios",JSON.stringify(usuarios));
+    }else{
+        alert("operacion cancelada!")
+    }
+
+    cargarTablaUser();
+}
+
+
+
 
 
 validarUsuario();
