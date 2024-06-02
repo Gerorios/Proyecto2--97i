@@ -200,10 +200,13 @@ footer{
 
 /* tabla styles */
 
-#contenedor-tabla{
+#contenedor-tabla,#contenedor-tabla-usuarios{
     width: 100%;
     overflow-x: auto;
 }
+
+
+
 table{
     width: 100%;
     border-collapse: collapse;

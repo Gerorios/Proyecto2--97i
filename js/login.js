@@ -19,15 +19,7 @@ const admin  = [
         nombre:"Geronimo",
         apellido: "Rios Antenucci",
     }
-<<<<<<< HEAD
-]
-
-;
-let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-
-<<<<<<< HEAD
-
-
+];
 const actualizarNavBar = () => {
     const username = localStorage.getItem('loggedInUser');
     const loginBtn = document.getElementsByClassName('action-btn');
@@ -47,10 +39,9 @@ const actualizarNavBar = () => {
 
 document.addEventListener('DOMContentLoaded', actualizarNavBar);
 
-=======
-];
-// localStorage.setItem("usuarios",JSON.stringify(admin));
->>>>>>> 4pageadmin
+
+// localStorage.setItem("usuarios",JSON.stringify(admin)); 
+
 const inicioSesion = (event) =>{
     
     event.preventDefault();

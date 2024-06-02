@@ -166,7 +166,7 @@ const cargarTablaUser = () => {
         <th>
         <div class="d-flex gap-2">
         <i class="fa-solid fa-arrow-up puntero" onclick="hacerAdmin(${users.id})" style="color: #04ff00;"></i>
-        <i class="fa-solid fa-ban puntero" style="color: #ff0000;"></i>
+        <i class="fa-solid fa-ban puntero" onclick="eliminarUser(${users.id} )" style="color: #ff0000;"></i>
         </div>
         </th>
         `
@@ -188,6 +188,18 @@ const hacerAdmin = (id) =>{
       cargarTablaUser();
 }
   
+const eliminarUser =(id) =>{
+    let posicion = usuarios.findIndex((user) =>{
+        return user.id == id;
+    })
+    usuarios.splice(posicion,1);
+    
+    localStorage.setItem("usuarios",JSON.stringify(usuarios));
+
+    cargarTablaUser();
+}
+
+
 
 
 
