@@ -20,24 +20,7 @@ const admin  = [
         apellido: "Rios Antenucci",
     }
 ];
-const actualizarNavBar = () => {
-    const username = localStorage.getItem('loggedInUser');
-    const loginBtn = document.getElementsByClassName('action-btn');
-    const usernameDisplay = document.getElementById('nombreuser');
-    const logoutBtn = document.getElementById('logoutBtn');
 
-    if (username) {
-        loginBtn.style.display = 'none';
-        usernameDisplay.textContent = `Bienvenido, ${username}`;
-        logoutBtn.style.display = 'block';
-    } else {
-        loginBtn.style.display = 'block';
-        usernameDisplay.textContent = '';
-        logoutBtn.style.display = 'none';
-    }
-};
-
-document.addEventListener('DOMContentLoaded', actualizarNavBar);
 
 
 // localStorage.setItem("usuarios",JSON.stringify(admin)); 
