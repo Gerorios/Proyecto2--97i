@@ -192,9 +192,15 @@ const eliminarUser =(id) =>{
     let posicion = usuarios.findIndex((user) =>{
         return user.id == id;
     })
-    usuarios.splice(posicion,1);
     
-    localStorage.setItem("usuarios",JSON.stringify(usuarios));
+
+    let validar = confirm("Seguro que desea banear el usuario?");
+    if (validar) {
+        usuarios.splice(posicion,1);
+        localStorage.setItem("usuarios",JSON.stringify(usuarios));
+    }else{
+        alert("operacion cancelada!")
+    }
 
     cargarTablaUser();
 }
