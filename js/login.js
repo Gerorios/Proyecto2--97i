@@ -1,5 +1,6 @@
 class usuario {
-    constructor(nombreDeUsuario , mail , contraseña , admin= false,nombre, apellido){
+    constructor(id,nombreDeUsuario , mail , contraseña , admin= false,nombre, apellido){
+        this.id = id;
         this.nombreDeUsuario = nombreDeUsuario;
         this.mail = mail;
         this.contraseña = contraseña;
@@ -10,6 +11,7 @@ class usuario {
 }
 const admin  = [
     {
+        id: 1232131231,
         nombreDeUsuario: "Geroadmin123",
         mail:"antenuccifc@gmail.com",
         contraseña: "123456",
@@ -17,6 +19,7 @@ const admin  = [
         nombre:"Geronimo",
         apellido: "Rios Antenucci",
     }
+<<<<<<< HEAD
 ]
 
 ;
@@ -44,9 +47,14 @@ const actualizarNavBar = () => {
 
 document.addEventListener('DOMContentLoaded', actualizarNavBar);
 
+=======
+];
+// localStorage.setItem("usuarios",JSON.stringify(admin));
+>>>>>>> 4pageadmin
 const inicioSesion = (event) =>{
+    
     event.preventDefault();
-
+    
     let nombre = document.querySelector("#nombre_usuarioL").value;
     let passw = document.querySelector("#contraseña_usuario").value;
 
@@ -82,7 +90,7 @@ const inicioSesion = (event) =>{
 
 const crearUsuario = (event) =>{
     event.preventDefault();
-
+    let id = new Date().getTime();
     let nombre = document.querySelector("#nombre").value;
     let apellido = document.querySelector("#apellido").value;
     let mail = document.querySelector("#mail").value;
@@ -91,6 +99,7 @@ const crearUsuario = (event) =>{
     let admin = false;
 
     let newUser = new usuario(
+        id,
         username,
         mail,
         contraseña,
