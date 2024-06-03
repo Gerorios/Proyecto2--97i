@@ -194,3 +194,17 @@ footer{
     }
 
 }
+
+@media (max-width: 470px) {
+    #mapa-contacto{
+        max-width: 350px;
+        max-height: 250px;
+        margin: 20px;
+    }
+}
+@media  (min-width: 471px) and (max-width: 800px) {
+    #mapa-contacto{
+        max-width: 350px;
+        max-height: 250px;
+    }
+}
