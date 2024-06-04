@@ -205,3 +205,7 @@ main{
         text-transform: uppercase;
         border-radius: 1rem;
     }
+    #boton-carrito-producto :hover{
+        transform: scale(1.2);
+    }
+    
