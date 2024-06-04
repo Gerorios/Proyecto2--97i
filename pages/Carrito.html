@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechTuch</title>
+    <title>TechTuch-Carrito</title>
     <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -18,33 +18,33 @@
     <link rel="stylesheet" href="/css/carrito.css">
 </head>
 <body>
-    <header>
-        <div class="navbar">
-          <div class="logo"><a href="/index.html"><img src="/img/logo/logo-proyecto-2.png" alt="" /></a></div>
-          <ul class="links">
-            <li><a href="" class="info">About us</a></li>
-            <li><a href="" class="info">Administracion</a></li>
-            <li><a href="" class="info">Ver mi carrito</a></li>
-          </ul>
-          <a href="" class="action-btn">Login</a>
-          <div class="toggle-btn" onclick="openMenu()">
-            <i class="fa-solid fa-bars"></i>
-          </div>
-        </div>
-        <div class="dropdown_menu">
-          <li><a href="">About us</a></li>
-          <li><a href="">Administracion</a></li>
-          <li><a href="/pages/Carrito.html">Ver mi carrito</a></li>
-          <li><a href="" class="action-btn">Login</a></li>
-        </div>
-      </header>
+  <header>
+    <div class="navbar">
+      <div class="logo"> <a href="/index.html"><img src="/img/logo/TECH PNG.png" alt="" /></a></div>
+      <ul class="links">
+        <li><a href="/pages/Contacto.html">Contactanos</a></li>
+        <li><a href="/pages/administracion.html">Administracion</a></li>
+        <li><a href="/pages/Carrito.html">Ver mi carrito</a></li>
+      </ul>
+      <a class="action-btn "  href="#ModalLogin" data-bs-target="#modalLogin" data-bs-toggle="modal" id="loginButton">Login</a>
+      <div class="toggle-btn" onclick="openMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+    <div class="dropdown_menu">
+      <li><a href="">Contacto</a></li>
+      <li><a href="/pages/administracion.html">Administracion</a></li>
+      <li><a href="/pages/Carrito.html">Ver mi carrito</a></li>
+      <li><a class="action-btn"  href="#ModalLogin" data-bs-target="#modalLogin" data-bs-toggle="modal" id="loginButtonDropdownMenu">Login</a></li>
+    </div>
+  </header>
       <main id="main">
         <div class="container">
           <div class="row mt-3 p-2" id="row-tablas">
-            <table class="table" id="contenedor-tabla">
+            <table class="table" id="contenedor-tabla" style="border: 0;">
               <thead>
-                <tr class="mb-3">
-                <th scope="col"  class=" fs-4">Producto</th>
+                <tr class="mb-3" style="border: 0;">
+                <th scope="col"  class="fs-4">Producto</th>
                 <th scope="col" class=" fs-4">Nombre</th>
                 <th scope="col" class="fs-4">Precio</th>
                 <th></th>
@@ -59,16 +59,6 @@
 
             </div>
           </div>
-          <!-- <div class="w-100 d-flex justify-content-end">
-            <div class="d-block">
-              <div>
-                <h5 id="text-desc" style="color: orangered;" class="fw-bold">Total</h5>
-              </div>
-              <div id="total">
-                <p class="text-center mt-2">sdasd</p>
-              </div>
-            </div>
-          </div> -->
           <div id="contenedor">
           </div>
         </div>
@@ -80,7 +70,7 @@
             <div id="footerlogo">
               <a href="index.html"
                 ><img
-                  src="/img/logo/logo-proyecto-2.png"
+                  src="/img/logo/TECH PNG.png"
                   alt="logo"
                   width="100"
               /></a>
@@ -109,16 +99,15 @@
             <span>&copy;Derechos reservados</span>
           </div>
           <div class="col-sm-12 col-md-4 text-center mt-3 cols-responsive" id="redes">
-            <a class="foo" href="/Page/contacto.html"><h6>Contactanos</h6> </a>
-            <a class="foo" href="/Page/error404.html"
-              ><h6>Privacidad Y Legales</h6></a
+            <a  href="/pages/Contacto.html"><h5  class = "infoFoot">Contactanos</h5> </a>
+            <a  href="/pages/Error404.html"
+              ><h5  class = "infoFoot">Privacidad Y Legales</h5></a
             >
             <a class="foo" href="/Page/acercadenosotros.html"
-              ><h6>Acerca de Nosotros</h6></a
+              ><h5  class = "infoFoot">Acerca de Nosotros</h5></a
             >
           </div>
         </div>
-        
       </footer>
     <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -128,111 +117,161 @@
   <script src="https://kit.fontawesome.com/82f0997eec.js" crossorigin="anonymous"></script>
   <script src="/js/global.js"></script>
   <script src="/js/carrito.js"></script>
+  <script src="/js/login.js"></script>
 </body>
 </html>
 
 
-
 <!--- Modal-->
-<div
-class="modal fade"
-id="productoModal"
-tabindex="-1"
-aria-labelledby="productoModalLabel"
-aria-hidden="true"
->
-<div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header bg-success">
-      <i class="fa-brands fa-paypal fa-xl mx-1"></i>
-      <h1 class="modal-title fs-5" id="productoModalLabel">
-        Proceso de pago 
-      </h1>
-      <button
-        type="button"
-        class="btn-close"
-        data-bs-dismiss="modal"
-        aria-label="Close"
-      > 
-    </button>
-    </div>
-    <div class="modal-body bg-transparent">
-      <form>
-        <div class="row mb-2">
-          <div class="col">
-            <label>Nombre Titular de la tarjeta</label>
-            <input
-              type="text"
-              class="form-control"
-              required
-              id="nombre-tarjeta"
-            />
-            <p class="text-muted">Debe estar escrito igual que en la tarjeta</p>
-          </div>
-        </div>
-        <div class="row mb-2">
-          <div class="col">
-            <label for="numeroDeTarjeta">Numero de la tarjeta</label>
-            <input
-            type="text"
-            class="form-control"
-            required
-            id="numeroDeTarjeta"
-            placeholder="123412341234"
-          />
-          </div>
-        </div>
-        <div class="row mb-2">
-          <div class="col">
-            <label>Fecha de caducidad</label>
-            <input
-              type="text"
-              class="form-control"
-              maxlength="5"
-              required
-              id="caducidadTarjeta"
-              placeholder="dd/mm"
-            />
-          </div>
-          <div class="col">
-            <label>Codigo de seguridad</label>
-            <input
-              type="text"
-              class="form-control"
-              required
-              id="codigoTarjeta"
-              placeholder="CVC"
-            />
-          </div>
-        </div>
-        <div class="row mb-2">
-          <div class="col">
-            <label>Envio a...</label>
-            <select
-              class="form-select"
-              aria-label="Default select example"
-              required
-              id="categoriaModal"
-            >
-              <option selected>Seleccione una provincia</option>
-              <option value="Tucuman">Tucuman</option>
 
-              <option value="Buenos aires">Buenos aires</option>
-              <option value="Jujuy">Jujuy</option>
-              <option value="Catamarca">Catamarca</option>
-              <option value="Cordoba">Cordoba</option>
-              <option value="Santa fe">Santa fe</option>
-              <option value="Formosa">Formosa</option>
-            </select>
+<div class="modal fade" id="productoModal" tabindex="-1" aria-labelledby="productoModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-success">
+        <i class="fab fa-paypal fa-xl mx-1"></i>
+        <h1 class="modal-title fs-5" id="productoModalLabel">Proceso de Pago</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body bg-transparent">
+        <form id="form-pago">
+          <div class="row mb-2">
+            <div class="col">
+              <label>Nombre Titular de la tarjeta</label>
+              <input type="text" class="form-control" required id="nombre-tarjeta"/>
+              <p class="text-muted">Debe estar escrito igual que en la tarjeta</p>
+            </div>
+            <div id="error-name"></div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col d-flex justify-content-end">
-            <input type="submit" class="btn btn-success" value="Pagar">
+          <div class="row mb-2">
+            <div class="col">
+              <label for="numeroDeTarjeta">Numero de la tarjeta</label>
+              <input type="text" class="form-control" required id="numeroDeTarjeta" placeholder="123412341234"/>
+            </div>
+            <div id="error-nro"></div>
           </div>
-        </div>
-      </form>
+          <div class="row mb-2">
+            <div class="col">
+              <label>Fecha de caducidad</label>
+              <input type="text" class="form-control" maxlength="5" required id="caducidadTarjeta" placeholder="dd/mm"/>
+              <div class="error-cadu"></div>
+            </div>
+            <div class="col">
+              <label>Codigo de seguridad</label>
+              <input type="text" class="form-control" required id="codigoTarjeta" placeholder="CVC"/>
+              <div id="error-code"></div>
+            </div>
+
+          </div>
+          <div class="row mb-2">
+            <div class="col">
+              <label>Envio a...</label>
+              <select class="form-select" aria-label="Default select example" required id="categoriaModal">
+                <option selected>Seleccione una provincia</option>
+                <option value="Tucuman">Tucuman</option>
+                <option value="Buenos aires">Buenos aires</option>
+                <option value="Jujuy">Jujuy</option>
+                <option value="Catamarca">Catamarca</option>
+                <option value="Cordoba">Cordoba</option>
+                <option value="Santa fe">Santa fe</option>
+                <option value="Formosa">Formosa</option>
+              </select>
+            </div>
+          </div>
+          <div class="row" id="row-modal">
+            <div class="col d-flex justify-content-end">
+              <button type="sub" class="btn btn-success" id="pagarBtn">Pagar</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>
+
+
+<!--  MOdal loogin-------------------------------------------------->
+<div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header cabeza-modal border-0">
+        <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Inicio de sesion</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body cuerpo-modal">
+        <form onsubmit="inicioSesion(event)">
+          <div class="row mb-2">
+            <div class="col">
+              <label for="Nombre" class="fw-bold">Ingrese su nombre de usuario</label>
+              <input type="text" id="nombre_usuarioL" class="form-control" required placeholder="pepe_1234">
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col">
+              <label for="passw" class="fw-bold">Ingrese su contraseña</label>
+              <input type="password" id="contraseña_usuario" required class="form-control"   placeholder="pepito1234">
+            </div>
+          </div>
+          <div class="modal-footer d-flex justify-content-between ">
+            <button type="submit" class="btn btn-light" data-bs-dismiss="modal">Iniciar sesion</button>
+            <p>No tienes cuenta? <a href="#ModalRegistro" data-bs-target="#modalRegistro" data-bs-toggle="modal" id="modalLogin">Registrarse</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-------------------------------------Modal registro------------------------------->
+<div class="modal fade" id="modalRegistro" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel2">Registro de usuario</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="crearUsuario(event)">
+          <div class="row mb-2">
+            <div class="col">
+              <label for="Nombre" class="fw-bold">Ingrese su nombre</label>
+              <input type="text" id="nombre" class="form-control" required placeholder="luis">
+            </div>
+            <div class="col">
+              <label for="apellido" class="fw-bold">Ingrese su apellido</label>
+              <input type="text" id="apellido" class="form-control" required placeholder="juarez">
+
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col">
+              <label for="mail" class="fw-bold">Ingrese su mail</label>
+              <input type="mail" id="mail" required class="form-control"   placeholder="pepito1234@hola.com">
+             
+            </div>
+            <div class="col">
+              <label for="mail" class="fw-bold">Ingrese su nombre de usuario</label>
+              <input type="mail" id="nombre_usuario" required class="form-control"   placeholder="pepito1234">
+             
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col">
+              <label for="passw">Ingrese su contraseña</label>
+              <input type="password" id="password" required class="form-control">
+              
+            </div>
+            <div class="col">
+              <label for="passw">repita su contraseña</label>
+              <input type="password" required class="form-control">
+            
+            </div>
+          </div>
+          <div class="modal-footer d-flex justify-content-between">
+            <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Registrarme</button>
+            <p>ya tienes cuenta?<a href="#modalLogin" class="text-danger mx-1" id="modalRegistro" data-bs-target="#modalLogin" data-bs-toggle="modal">Iniciar sesion</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>

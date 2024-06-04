@@ -1,16 +1,4 @@
 
-class productos {
-   constructor(id,title,price,description,category,image,carrito=false){
-      this.id = id;
-      this.title = title;
-      this.price = price;
-      this.description = description;
-      this.category = category;
-      this.image = image;
-      this.carrito = carrito;
-
-   }
- }
  const data = [
    {
      id: 9,
@@ -81,8 +69,8 @@ class productos {
      carrito: false,
    },
  ];
-
- const producto = JSON.parse(localStorage.getItem("productos")) || [];
+//  localStorage.setItem("productos",JSON.stringify(data));
+let producto = JSON.parse(localStorage.getItem("productos")) || [];
 
  let contenedor = document.querySelector("#contenedor");
 
@@ -99,24 +87,73 @@ class productos {
       <img src="${item.image} " class="card-img-top" alt="...">
       </div>
       <div class="card-body">
-      <a href=""><h4 class="card-title text-white text-center">${item.title} </h4></a>
+      <a href="./pages/producto.html?id=${item.id}"><h4 class="card-title text-white text-center" target="_blank">${item.title} </h4></a>
       </div>
-      <div class="d-flex w-100 justify-content-between align-items-center p-2">
+      <div class="d-flex w-100 justify-content-between align-items-center p-2 card-icon-btn">
       <div class="m-2 puntero">
-      <i class="${item.carrito ? "fa-solid fa-xmark fa-xl bg-dark" : "fa-solid fa-cart-shopping fa-xl" } " onclick="marcarCarrito(${item.id} )" style="color: white;"></i><a href="" class="btn btn-light mx-2">Ver mas</a>
+      <i class="${item.carrito ? "fa-solid fa-xmark fa-xl bg-dark" : "fa-solid fa-cart-shopping fa-xl"}" onclick="marcarCarrito(${item.id} )" style="color: white;"></i><a href="./pages/producto.html?id=${item.id} " class="btn btn-light mx-2 buton-mas">Ver mas</a>
       </div>
       <div class="m-2" >
-      <h3 style="color: yellow;">$${item.price}</h3>
+      <h3 style="color: greenyellow;" class="precio">$${item.price}</h3>
       </div>
       </div>
   </div>
-
       `
       col.innerHTML=card;
 
       contenedor.append(col);
    })
  }
+
+const ordenarPorPrecio = () =>{
+  let nuevoarray = producto.map((item) =>{
+    return{
+      id: item.id,
+      title: item.title,
+      price: item.price,
+      description: item.description,
+      category: item.category,
+      image: item.image,
+      carrito: item.carrito,
+    }
+  })
+  nuevoarray.sort((a,b) => a.price -b.price)
+
+  producto = nuevoarray;
+
+  localStorage.setItem("productos",JSON.stringify(producto));
+  listarProductos();
+}
+
+const ordernarAlfabeticamente = () => {
+  let nuevoarray = producto.map((item) =>{
+    return{
+      id: item.id,
+      title: item.title,
+      price: item.price,
+      description: item.description,
+      category: item.category,
+      image: item.image,
+      carrito: item.carrito,
+    }
+  })
+
+  nuevoarray.sort((a,b) => {
+    if(a.title > b.title ){
+      return 1;
+    }else if(a.title < b.title){
+      return -1;
+    }
+    else{
+      return 0;
+    }
+  })
+
+  producto = nuevoarray;
+
+  localStorage.setItem("productos",JSON.stringify(producto));
+  listarProductos();
+}
 
  
 listarProductos();

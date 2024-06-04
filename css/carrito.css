@@ -1,25 +1,12 @@
 #total{
-    height: 50px;
-    width: 150px;
-    border: solid orangered;
-    background-color: white;
-    border-radius: 15%;
-    box-shadow: 0.2rem 0.1rem rgb(56, 55, 55);
-}
-
-.continue-botton{
-    background-color: yellow;
-    padding: 0.5rem 1.5rem;
-    border: none;
-    outline: none;
-    border-radius: 10px;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.caja-boton-continuar{
-    margin-top: 12px;
+    display: flex;
+    background-color: rgba(75, 23, 139, 0.744);
+    color: white;
+    text-transform: uppercase;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    gap: 1rem;
+    text-transform: uppercase;
 }
 .caja-boton-continuar:hover{
     transform: scale(1.1);
@@ -27,15 +14,19 @@
 .caja-carrito{
     padding-bottom: 15px;
 }
-#boton{
-    margin-bottom: 100px;
-    height: 25%;
-    
+#boton-abrir-modal{
+    border: 0;
+    background-image: linear-gradient(rgb(238, 93, 117),rgb(234, 101, 234));
+    padding: 1rem;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
 }
 #main{
     min-height: 75vh;
+} 
+.tabla-img{
+    background-color: transparent;
 }
-.error {
-    color: red;
-    font-size: 0.875em;
-  }
+
