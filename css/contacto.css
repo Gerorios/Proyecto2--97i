@@ -140,7 +140,8 @@ header{
 .puntero{
     cursor: pointer;
 }
-/* Resposive menu*/
+
+
 @media (max-width: 992px) {
     .navbar .links,
     .navbar .action-btn{

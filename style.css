@@ -105,8 +105,6 @@ header{
     scale: 0.9;
 }
 
-/*Menu dropdown*/
-
 .dropdown_menu{
     display: none;
     position: absolute;
@@ -139,9 +137,6 @@ header{
 .dropdown_menu{
     z-index: 1000; /
 }
-
-
-/* Resposive menu*/
 @media (max-width: 992px) {
     .navbar .links,
     .navbar .action-btn{
@@ -231,7 +226,6 @@ header{
     background-color: red;
 }
 
-/* Estilo de marcas  */
 .marcas-section {
     padding: 20px 0;
 
