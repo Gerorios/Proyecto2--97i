@@ -208,3 +208,11 @@ footer{
         max-height: 250px;
     }
 }
+#boton-contact{
+    border: 0;
+    background-image: linear-gradient(rgb(209, 24, 55),rgb(151, 54, 151));
+    padding: 1rem;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    border-radius: 1rem;
+}
