@@ -23,7 +23,7 @@ const admin  = [
 
 
 
-// localStorage.setItem("usuarios",JSON.stringify(admin)); 
+localStorage.setItem("usuarios",JSON.stringify(admin)); 
 
 const inicioSesion = (event) =>{
     
