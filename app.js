@@ -1,75 +1,76 @@
 
  const data = [
    {
-     id: 9,
-     title: "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
-     price: 64,
-     description:
-       "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
-     category: "electronics",
-     image: "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
+     id: 1717508464951,
+     title: "Monitor Hkc Antteq 23,8 Full Hd F238m 24 Ips 75 Hz Hdmi Color Negro ",
+     price: 250,
+     description:"Disfrutá de todas las cualidades que el monitor HKC F238M tiene para ofrecerte. Percibí las imágenes de una manera completamente diferente y complementá cualquier espacio ya sea en tu casa u oficina.\n\nUn monitor a tu medida\nCon tu pantalla LED no solo ahorrás energía, ya que su consumo es bajo, sino que vas a ver colores nítidos y definidos en tus películas o series favoritas.\n\nUna experiencia visual de calidad\nEste monitor de 23.8\" te va a resultar cómodo para estudiar, trabajar o ver una película en tus tiempos de ocio. Asimismo, su resolución de 1920 × 1080 te permite disfrutar de momentos únicos gracias a una imagen de alta fidelidad.",
+     category: "Monitores",
+     image: "https://http2.mlstatic.com/D_NQ_NP_885380-MLU70876291504_082023-O.webp",
      carrito: false,
    },
    {
-     id: 10,
-     title: "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
-     price: 109,
-     description:
-       "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
-     category: "electronics",
-     image: "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
-
+     id: 1717508539215,
+     title: "Motherboard Gigabyte Amd A520m K V2 Ddr4 Gamer Color Negro",
+     price: 50,
+     description: "El Motherboard Gigabyte A520M K V2 1.0 es una placa base de la serie A520 de Gigabyte diseñada para procesadores AMD Ryzen de la serie AM4. Esta placa base es una opción económica y de gama media que ofrece un buen rendimiento para sistemas de PC básicos y de nivel de entrada    Algunas de las características clave del Gigabyte A520M K V2 1.0 incluyen soporte para procesadores AMD Ryzen de 3ª generación, hasta 64 GB de memoria DDR4 a 4000 MHz (OC), un socket AM4, un diseño de alimentación de alta calidad, un PCIe 3.0 x16 para tarjetas gráficas, un PCIe 3.0 x1, soporte para dispositivos de almacenamiento M.2, USB 3.2 Gen 1, HDMI, Realtek Gigabit LAN y audio de alta definición.   En general, el Gigabyte A520M K V2 1.0 es una opción sólida para aquellos que buscan construir un sistema de PC básico o de nivel de entrada con un presupuesto limitado. Es importante tener en cuenta que, al ser una placa base de gama media, puede no ofrecer todas las características y capacidades de las placas base de gama alta, pero cumple con las necesidades de la mayoría de los usuarios",
+     category: "Placas",
+     image: "https://http2.mlstatic.com/D_NQ_NP_692472-MLU73566361403_122023-O.webp",
      carrito: false,
    },
    {
-     id: 11,
+     id: 1717508833494,
      title:
-       "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
-     price: 109,
+       "Mando Bms Para Play 4 Control Joystick Inalambrico Bla",
+     price: 15,
      description:
-       "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
-     category: "electronics",
-     image: "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
+       "   \n |-| Joystick Inalambrico|-|\n Compatible con Play 4 |-|\n Se entrega con caja|-| \nDiseño Ergonomico |-| Con sistema de vibración incorporado|-| Incluye 1 cable usb  Garantía del vendedor: 3 meses.",
+     category: "controles",
+     image: "https://http2.mlstatic.com/D_NQ_NP_953394-MLA71772761856_092023-O.webp",
 
      carrito: false,
    },
    {
-     id: 12,
+     id: 1717508965743,
      title:
-       "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
-     price: 114,
+       "Fuente de alimentación para PC Aerocool Advanced Technologies Cylon 600W Full Range 600W black 100V/240V",
+     price: 75,
      description:
-       "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty",
-     category: "electronics",
-     image: "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
+       "Con la fuente de alimentación Aerocool Advanced Technologies 600W Full Range podrás asegurar la corriente continua y estable de tu computadora de escritorio y optimizar el funcionamiento de sus componentes. \n Control de temperatura A través de su sistema de refrigeración, podrás mantener la temperatura ideal de sus componentes y evitar su sobrecalentamiento. \n Sin ruido ni distracciones Debido a su funcionamiento silencioso, tu equipo operará minimizando el nivel de ruido, para que tu jornada sea más agradable.",
+     category: "Fuente",
+     image: "https://http2.mlstatic.com/D_NQ_NP_852987-MLA45975812457_052021-O.webp",
 
      carrito: false,
    },
    {
-     id: 13,
-     title: "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
-     price: 599,
-     description:
-       "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
-     category: "electronics",
-     image: "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
+    id: 1717509034327,
+    title:
+      "Disco sólido interno Kingston SA400S37/240G Sa400s 240GB negro ",
+    price: 68,
+    description:
+      "Considerado un dispositivo de alto rendimiento, la unidad en estado sólido A400 de Kingston está diseñada para las personas más exigentes. Mejora de forma notable la capacidad de respuesta de su sistema, ya que alcanza velocidades de lectura/escritura de hasta 500MB/seg y 450MB/seg. Por ende, es 10 veces más rápido que un disco duro tradicional. Al estar compuesta por una memoria flash es silenciosa y posee pocas probabilidades de tener fallas. Confianza ante todo Resguardá todo tipo de información sensible a través de su sistema de seguridad incorporado. Su defensa es impenetrable.",
+    category: "Disco-rigido",
+    image: "https://http2.mlstatic.com/D_NQ_NP_825890-MLA54124091906_032023-O.webp",
 
-     carrito: false,
-   },
+    carrito: false,
+  },
    {
-     id: 14,
+     id: 1717509231763,
      title:
-       "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
-     price: 999.99,
+       "Tarjeta Gráfica Dual Nvidia Geforce Rtx 3050 6gb ",
+     price: 300,
      description:
-       "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
-     category: "electronics",
-     image: "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
+       "Este componente electrónico procesa la información que llega al dispositivo y los transforma en imágenes o videos para mostrarla visualmente. Es ideal para trabajar con aplicaciones gráficas ya que permite obtener imágenes más nítidas.",
+     category: "Graficas",
+     image: "https://http2.mlstatic.com/D_NQ_NP_636453-MLU75395941796_042024-O.webp",
 
      carrito: false,
    },
  ];
-//  localStorage.setItem("productos",JSON.stringify(data));
+
+
+ localStorage.setItem("productos",JSON.stringify(data));
+ 
 let producto = JSON.parse(localStorage.getItem("productos")) || [];
 
  let contenedor = document.querySelector("#contenedor");
