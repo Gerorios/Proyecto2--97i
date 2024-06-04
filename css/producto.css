@@ -205,3 +205,14 @@ main{
         text-transform: uppercase;
         border-radius: 1rem;
     }
+    #contenedor-imagen-producto{
+        border: solid black;
+
+        border-radius: 1rem;
+        max-width: fit-content;
+    }
+    #contenedor-imagen-producto img{
+        /* width: 100%; */
+        border-radius: 1rem;
+        max-width: fit-content;
+    }

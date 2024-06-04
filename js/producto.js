@@ -12,20 +12,20 @@ const traerDatos = () =>{
     let col = document.createElement("div");
     col.classList="row mb-3";
     let contenido = `
-    <div class="col">
-    <img src="${productos.image} " width="600" alt="">
+    <div class="col contenedor-izquierda">
+    <div id="contenedor-imagen-producto"><img src="${productos.image} " width="600" alt="" ></div>
     </div>
    <div class="col">
      <div class="row mb-3">
-        <div class="col">
+        <div class="col contenedor-derecha">
             <div class="border-1">
-                <div class="border-4"><h3 class="text-white text-center fw-bold">${productos.title} </h3></div>
+                <div class="border-4"><h2 class="text-white text-center fw-bold">${productos.title} </h2></div>
                 <hr>
                 <h3 class="text-white fw-bold">Tipo: ${productos.category}</h3>     
                 <hr>
-                <h3 class=" fw-bold">Precio de contado: $${productos.price} </h3>
+                <h3 class="text-white fw-bold">Precio de contado: <span id="precio-producto">$${productos.price} </span></h3>
                 <hr>
-                <h4 class="text-dark fw-bold">Descripcion del producto: ${productos.description} </h4>
+                <h3 class="text-white fw-bold">Descripcion del producto:</h3><span id="description-producto">${productos.description}</span>
            </div>
         </div>
     </div>
