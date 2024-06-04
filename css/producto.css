@@ -208,5 +208,11 @@ main{
     #boton-carrito-producto :hover{
         transform: scale(1.2);
     }
-
-    
+    #contenedor-imagen-producto{
+        border: solid black;
+        border-radius: 1rem;
+    }
+    #contenedor-imagen-producto img{
+        width: 100%; 
+        border-radius: 1rem;
+    }

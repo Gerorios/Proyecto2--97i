@@ -17,7 +17,7 @@ const traerDatos = () =>{
     </div>
    <div class="col">
      <div class="row mb-3">
-        <div class="col">
+        <div class="col contenedor-derecha">
             <div class="border-1">
                 <div class="border-4"><h2 class="text-white text-center fw-bold">${productos.title} </h2></div>
                 <hr>
