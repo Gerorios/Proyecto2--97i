@@ -19,7 +19,7 @@ const marcarCarrito = (id) =>{
     producto[index].carrito = !producto[index].carrito
   
     localStorage.setItem("productos",JSON.stringify(producto));
-  
+    alert("Producto añadido al carrito")
     listarProductos();
   }
 const toggleBtn = document.querySelector(".toggle-btn")

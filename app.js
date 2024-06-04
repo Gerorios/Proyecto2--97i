@@ -87,11 +87,11 @@ let producto = JSON.parse(localStorage.getItem("productos")) || [];
       <img src="${item.image} " class="card-img-top" alt="...">
       </div>
       <div class="card-body">
-      <a href=""><h4 class="card-title text-white text-center">${item.title} </h4></a>
+      <a href="./pages/producto.html?id=${item.id}"><h4 class="card-title text-white text-center" target="_blank">${item.title} </h4></a>
       </div>
       <div class="d-flex w-100 justify-content-between align-items-center p-2 card-icon-btn">
       <div class="m-2 puntero">
-      <i class="${item.carrito ? "fa-solid fa-xmark fa-xl bg-dark" : "fa-solid fa-cart-shopping fa-xl"}" onclick="marcarCarrito(${item.id} )" style="color: white;"></i><a href="" class="btn btn-light mx-2 buton-mas">Ver mas</a>
+      <i class="${item.carrito ? "fa-solid fa-xmark fa-xl bg-dark" : "fa-solid fa-cart-shopping fa-xl"}" onclick="marcarCarrito(${item.id} )" style="color: white;"></i><a href="./pages/producto.html?id=${item.id} " class="btn btn-light mx-2 buton-mas">Ver mas</a>
       </div>
       <div class="m-2" >
       <h3 style="color: greenyellow;" class="precio">$${item.price}</h3>
