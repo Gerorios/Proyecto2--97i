@@ -199,15 +199,10 @@ footer{
 
 }
 
-
-
 #contenedor-tabla,#contenedor-tabla-usuarios{
     width: 100%;
     overflow-x: auto;
 }
-
-
-
 table{
     width: 100%;
     border-collapse: collapse;
@@ -241,8 +236,7 @@ td img {
 
     td {
       position: relative;
-      padding-left: 50%;
-      text-align: right;
+      text-align: left;
     }
   }
 
