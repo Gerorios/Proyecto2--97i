@@ -9,6 +9,7 @@ class usuario {
         this.apellido = apellido;
     }
 }
+//perfil de ejemplo
 const admin  = [
     {
         id: 1232131231,
@@ -50,10 +51,10 @@ const inicioSesion = (event) =>{
     if (userEncotrado) { 
         if (Esadmin) {
             alert("Buendia administrador!")
-            location.replace("http://127.0.0.1:5500/pages/administracion.html");
+            location.replace("./pages/administracion.html");
         } else {
             alert("Bienvenido a TechTuc")
-            location.replace("http://127.0.0.1:5500/index.html")
+            location.replace("./index.html")
         }
     } else {
         alert("Usuario o contraseña incorrectos.");
