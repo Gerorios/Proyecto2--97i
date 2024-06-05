@@ -10,16 +10,25 @@ class productos {
 
   }
 }
+
 let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
 const marcarCarrito = (id) =>{
     let index = producto.findIndex((item)=>{
       return item.id == id;
     })
-    producto[index].carrito = !producto[index].carrito
-  
-    localStorage.setItem("productos",JSON.stringify(producto));
-    alert("Producto añadido al carrito")
+    if (producto[index].carrito) {
+      alert("Se elimino el producto del carrito")
+
+      producto[index].carrito = !producto[index].carrito
+      localStorage.setItem("productos",JSON.stringify(producto));
+
+    }else{
+      alert("Se agrego producto al carrito")
+
+      producto[index].carrito = !producto[index].carrito;
+      localStorage.setItem("productos",JSON.stringify(producto));
+    }
     listarProductos();
   }
 const toggleBtn = document.querySelector(".toggle-btn")
