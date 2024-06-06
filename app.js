@@ -69,7 +69,7 @@
  ];
 
 
- localStorage.setItem("productos",JSON.stringify(data));
+//  localStorage.setItem("productos",JSON.stringify(data));
  
 let producto = JSON.parse(localStorage.getItem("productos")) || [];
 
